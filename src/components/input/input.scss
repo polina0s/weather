@@ -5,16 +5,18 @@
   border: none;
   border-radius: 30px;
   padding: 0px 20px 0px 20px;
-  font: 400 30px $poppins;
+  font: 400 2vw $poppins;
   background: $lightViolet;
 
   @include laptop {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
   }
 
   @include tablet {
-    width: 550px;
-    font-size: 25px;
+    width: 100%;
+    max-width: 550px;
+    // font-size: 25px;
   }
 
   @include  mobile {
