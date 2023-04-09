@@ -1,0 +1,24 @@
+.input {
+  width: 750px;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  padding: 0px 20px 0px 20px;
+  font: 400 30px $poppins;
+  background: $lightViolet;
+
+  @include laptop {
+    width: 600px;
+  }
+
+  @include tablet {
+    width: 550px;
+    font-size: 25px;
+  }
+
+  @include  mobile {
+    width: 100%;
+    max-width: 400px;
+  }
+}

@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+
+.weather {
+  min-height: 100%;
+  width: 100%;
+  background: $violet;
+  padding: 60px 30px 0px 30px;
+
+  &_locationInput {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    &-pin {
+      width: 65px;
+      height: 45px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../pictures/location.png);
+      margin-right: 10px;
+    }
+  }
+
+  &_locationModal {
+    display: flex;
+    justify-content: center;
+    margin-left: 75px;
+  }
+}
