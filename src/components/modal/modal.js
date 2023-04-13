@@ -11,3 +11,7 @@ class Modal {
     this.modalWind.classList.remove("modal--active");
   }
 }
+
+const modal = new Modal;
+
+export { modal };

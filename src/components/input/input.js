@@ -1,11 +1,17 @@
+import { modal } from "../modal/modal";
 class Input {
   constructor() {
     this.cityInput = document.querySelector(".weather_locationInput-input");
-    this.modal = document.querySelector(".modal");
+    this.modal = modal;
+
+    this.addListenerForInput();
   }
 
   addListenerForInput() {
-    this.cityInput.addEventListener("input", () => {});
+    this.cityInput.addEventListener(
+      "input",
+      this.modal.addActiveClass.bind(modal)
+    );
   }
 }
 
