@@ -6,17 +6,32 @@ class Input {
 
     this.onFocusInput();
     this.onBlurInput();
+    this.onChange();
+  }
+
+  showHelper(value) {
+    if (value.length > 2) {
+      this.modal.addActiveClass().bind(this.modal);
+    } else {
+      this.modal.removeActiveClass().bind(this.modal);
+    }
+  }
+
+  onChange() {
+    this.cityInput.addEventListener("input", (e) => {
+      this.showHelper(e.target.value);
+    });
   }
 
   onFocusInput() {
-    this.cityInput.addEventListener("focus", () => {
-      this.modal.addActiveClass().bind(modal);
+    this.cityInput.addEventListener("focus", (e) => {
+      this.showHelper(e.target.value);
     });
   }
 
   onBlurInput() {
     this.cityInput.addEventListener("blur", () => {
-      this.modal.removeActiveClass().bind(modal);
+      this.modal.removeActiveClass().bind(this.modal);
     });
   }
 
