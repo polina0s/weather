@@ -1,8 +1,12 @@
 import { modal } from "../modal/modal";
+import { api } from "../api/api";
 class Input {
   constructor() {
     this.cityInput = document.querySelector(".weather_locationInput-input");
     this.modal = modal;
+    this.api = api;
+
+    this.api.getCoordinates("Berlin");
 
     this.onFocusInput();
     this.onBlurInput();
