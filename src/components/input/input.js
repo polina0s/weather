@@ -6,7 +6,7 @@ class Input {
     this.modal = modal;
     this.api = api;
 
-    this.api.getCoordinates("Berlin");
+    this.api.getCities("Berlin");
 
     this.onFocusInput();
     this.onBlurInput();

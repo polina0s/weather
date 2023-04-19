@@ -4,10 +4,19 @@ class Api {
     this.geoUrl = import.meta.env.VITE_GEO_URL;
   }
 
-  getCoordinates(name) {
+  getCities(name) {
+    let countries = [];
+    let cities = [];
     fetch(`${this.geoUrl}search?name=${name}`)
       .then((response) => response.json())
-      .then((result) => console.log(result));
+      .then((result) => {
+        let a = result.results;
+        a.forEach((el) => {
+          countries.push(el.country);
+          cities.push(el.name);
+        });
+      });
+    return countries, cities;
   }
 }
 
