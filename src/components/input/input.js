@@ -6,23 +6,25 @@ class Input {
     this.modal = modal;
     this.api = api;
 
-    // let b = this.api.getCities("Berlin");
-    // console.log(b.then((v) => console.log(v)));
-
     this.onFocusInput();
     this.onBlurInput();
     this.onChange();
+    this.fillHelper("Berlin");
   }
 
-  fillHelper() {
-    
+  async fillHelper(value) {
+    let data = await this.api.getCities(value);
+
+    data.forEach((el) => {
+      this.modal.innerHTML = `<div class="modal-button"> <span class="modal-button--country">${el.country}</span> <span class="modal-button--city">${el.name}</span> </div>`;
+    });
   }
 
   showHelper(value) {
     if (value.length > 2) {
-      this.modal.addActiveClass().bind(this.modal);
+      this.modal.addActiveClass.bind(this.modal);
     } else {
-      this.modal.removeActiveClass().bind(this.modal);
+      this.modal.removeActiveClass.bind(this.modal);
     }
   }
 
@@ -40,7 +42,7 @@ class Input {
 
   onBlurInput() {
     this.cityInput.addEventListener("blur", () => {
-      this.modal.removeActiveClass().bind(this.modal);
+      this.modal.removeActiveClass.bind(this.modal);
     });
   }
 

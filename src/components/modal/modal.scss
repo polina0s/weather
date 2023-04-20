@@ -4,7 +4,7 @@
   max-height: 400px;
   background: $lightViolet;
   border-radius: 30px;
-  padding: 20px 30px 20px 30px;
+  padding: 10px 30px 10px 30px;
   // opacity: 0;
   // visibility: hidden;
 
@@ -30,6 +30,7 @@
   &-button {
     font-family: $poppins;
     font-size: clamp(0.7rem, 2vw, 1rem);
+    padding: 7px 0px 7px 0px;
     &--country {
       margin-right: 5px;
     }
