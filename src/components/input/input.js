@@ -6,11 +6,16 @@ class Input {
     this.modal = modal;
     this.api = api;
 
-    console.log(this.api.getCities("Berlin"));
+    // let b = this.api.getCities("Berlin");
+    // console.log(b.then((v) => console.log(v)));
 
     this.onFocusInput();
     this.onBlurInput();
     this.onChange();
+  }
+
+  fillHelper() {
+    
   }
 
   showHelper(value) {

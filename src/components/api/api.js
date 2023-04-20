@@ -4,14 +4,10 @@ class Api {
     this.geoUrl = import.meta.env.VITE_GEO_URL;
   }
 
-  getCities(name) {
-    let results;
-    fetch(`${this.geoUrl}search?name=${name}`)
-      .then((response) => response.json())
-      .then((result) => {
-        results = result.results;
-      });
-    return results;
+  async getCities(name) {
+    const response = await fetch(`${this.geoUrl}search?name=${name}`);
+    const json = await response.json();
+    return json.results;
   }
 }
 
