@@ -26,4 +26,12 @@
     width: 100%;
     max-width: 400px;
   }
+
+  &-button {
+    font-family: $poppins;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    &--country {
+      margin-right: 5px;
+    }
+  }
 }

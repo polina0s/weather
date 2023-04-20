@@ -5,29 +5,13 @@ class Api {
   }
 
   getCities(name) {
-    let cities = [];
+    let results;
     fetch(`${this.geoUrl}search?name=${name}`)
       .then((response) => response.json())
       .then((result) => {
-        let results = result.results;
-        results.forEach((el) => {
-          cities.push(el.name);
-        });
+        results = result.results;
       });
-    return cities;
-  }
-
-  getCountries(name) {
-    let countries = [];
-    fetch(`${this.geoUrl}search?name=${name}`)
-      .then((response) => response.json())
-      .then((result) => {
-        let results = results.results;
-        results.forEach((el) => {
-          countries.push(el.country);
-        });
-      });
-    return countries;
+    return results;
   }
 }
 
