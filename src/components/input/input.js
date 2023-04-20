@@ -5,20 +5,34 @@ class Input {
     this.cityInput = document.querySelector(".weather_locationInput-input");
     this.modal = modal;
     this.api = api;
+    this.helper = document.querySelector(".modal");
 
     this.onFocusInput();
     this.onBlurInput();
     this.onChange();
-    this.fillHelper("Berlin");
+    // this.fillHelper("Berlin");
   }
 
-  async fillHelper(value) {
-    let data = await this.api.getCities(value);
+  createCityButton(country, city) {
+    this.element = document.createElement("div");
+    this.element.classList.add("modal-button");
 
-    data.forEach((el) => {
-      this.modal.innerHTML = `<div class="modal-button"> <span class="modal-button--country">${el.country}</span> <span class="modal-button--city">${el.name}</span> </div>`;
-    });
+    this.element.innerHTML = `<div class="modal-button">
+      <span class="modal-button--country">${country}</span>
+      <span class="modal-button--city">${city}</span>
+      </div>`;
   }
+
+  // async fillHelper(value) {
+  //   let data = await this.api.getCities(value);
+
+  //   data.forEach((el) => {
+  // this.helper.innerHTML = `<div class="modal-button">
+  // <span class="modal-button--country">${el.country}</span>
+  // <span class="modal-button--city">${el.name}</span>
+  // </div>`;
+  //   });
+  // }
 
   showHelper(value) {
     if (value.length > 2) {
