@@ -3,8 +3,8 @@
   height: auto;
   max-height: 400px;
   background: $lightViolet;
-  border-radius: 30px;
-  padding: 10px 30px 10px 30px;
+  border-radius: 25px;
+  padding: 10px 20px 10px 20px;
   // opacity: 0;
   // visibility: hidden;
 
@@ -28,11 +28,20 @@
   }
 
   &-button {
+    display: flex;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: $violet;
     font-family: $poppins;
     font-size: clamp(0.7rem, 2vw, 1rem);
-    padding: 7px 0px 7px 0px;
+    margin: 7px 0px 7px 0px;
+    width: 100%;
+
     &--country {
-      margin-right: 5px;
+      margin: 0px 0px 0px 7px;
+      width: 200px;
+      text-align: left;
     }
   }
 }

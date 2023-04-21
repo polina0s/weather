@@ -1,5 +1,6 @@
 import { modal } from "../modal/modal";
 import { api } from "../api/api";
+import { CityButton } from "../cityButton/cityButton";
 class Input {
   constructor() {
     this.cityInput = document.querySelector(".weather_locationInput-input");
@@ -13,22 +14,11 @@ class Input {
     this.fillHelper("Berlin");
   }
 
-  // createCityButton(country, city) {
-  //   this.element = document.createElement("div");
-  //   this.element.classList.add("modal-button");
-
-  //   this.element.innerHTML = `<div class="modal-button">
-  //     <span class="modal-button--country">${country}</span>
-  //     <span class="modal-button--city">${city}</span>
-  //     </div>`;
-  // }
-
   async fillHelper(value) {
     let data = await this.api.getCities(value);
+    console.log(data);
 
-    data.forEach((el) => {
-      // this.createCityButton(el.country, el.city);
-    });
+    this.modal.showModal(data);
   }
 
   showHelper(value) {

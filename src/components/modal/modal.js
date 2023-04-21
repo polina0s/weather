@@ -1,3 +1,5 @@
+import { CityButton } from "../cityButton/cityButton";
+
 class Modal {
   constructor() {
     this.modalWind = document.querySelector(".modal");
@@ -13,6 +15,11 @@ class Modal {
 
   appendCityButton(element) {
     this.modalWind.append(element);
+  }
+
+  showModal(data) {
+    data.forEach((data) => this.appendCityButton(new CityButton(data).element));
+    this.addActiveClass();
   }
 }
 

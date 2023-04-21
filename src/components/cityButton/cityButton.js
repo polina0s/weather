@@ -1,25 +1,23 @@
 class CityButton {
-  constructor() {
-    this.createCityButton({ country: data.country, city: data.city });
-
-    this.cityButton = this.element.querySelector(".modal-button");
+  constructor(data) {
+    this.createCityButton({ country: data.country, name: data.name });
   }
 
-  createCityButton({ country, city }) {
+  createCityButton({ country, name }) {
     this.element = document.createElement("div");
     this.element.classList.add("modal-button");
 
-    this.element.innerHTML = `<div class="modal-button">
-      <span class="modal-button--country">${country}</span>
-      <span class="modal-button--city">${city}</span>
-      </div>`;
+    this.element.innerHTML = `<button class="modal-button">
+      <div class="modal-button--country">${country}</div>
+      <div class="modal-button--city">${name}</div>
+      </button>`;
   }
 
   addListenerForButton() {
-    this.cityButton.addEventListener("click", () => {
+    this.element.addEventListener("click", () => {
       console.log(1111111);
     });
   }
 }
 
-export { cityButton };
+export { CityButton };
