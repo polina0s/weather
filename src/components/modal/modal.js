@@ -10,8 +10,12 @@ class Modal {
   removeActiveClass() {
     this.modalWind.classList.remove("modal--active");
   }
+
+  appendCityButton(element) {
+    this.modalWind.append(element);
+  }
 }
 
-const modal = new Modal;
+const modal = new Modal();
 
 export { modal };

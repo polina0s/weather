@@ -10,29 +10,26 @@ class Input {
     this.onFocusInput();
     this.onBlurInput();
     this.onChange();
-    // this.fillHelper("Berlin");
+    this.fillHelper("Berlin");
   }
 
-  createCityButton(country, city) {
-    this.element = document.createElement("div");
-    this.element.classList.add("modal-button");
+  // createCityButton(country, city) {
+  //   this.element = document.createElement("div");
+  //   this.element.classList.add("modal-button");
 
-    this.element.innerHTML = `<div class="modal-button">
-      <span class="modal-button--country">${country}</span>
-      <span class="modal-button--city">${city}</span>
-      </div>`;
-  }
-
-  // async fillHelper(value) {
-  //   let data = await this.api.getCities(value);
-
-  //   data.forEach((el) => {
-  // this.helper.innerHTML = `<div class="modal-button">
-  // <span class="modal-button--country">${el.country}</span>
-  // <span class="modal-button--city">${el.name}</span>
-  // </div>`;
-  //   });
+  //   this.element.innerHTML = `<div class="modal-button">
+  //     <span class="modal-button--country">${country}</span>
+  //     <span class="modal-button--city">${city}</span>
+  //     </div>`;
   // }
+
+  async fillHelper(value) {
+    let data = await this.api.getCities(value);
+
+    data.forEach((el) => {
+      // this.createCityButton(el.country, el.city);
+    });
+  }
 
   showHelper(value) {
     if (value.length > 2) {
