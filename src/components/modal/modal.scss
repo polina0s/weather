@@ -1,7 +1,6 @@
 .modal {
   width: 750px;
   height: auto;
-  max-height: 400px;
   background: $lightViolet;
   border-radius: 25px;
   padding: 10px 20px 10px 20px;
@@ -42,6 +41,18 @@
       margin: 0px 0px 0px 7px;
       width: 200px;
       text-align: left;
+
+      @include laptop {
+        width: 180px;
+      }
+
+      @include tablet {
+        width: 170px;
+      }
+
+      @include mobile {
+        width: 130px;
+      }
     }
   }
 }
