@@ -4,8 +4,8 @@
   background: $lightViolet;
   border-radius: 25px;
   padding: 10px 20px 10px 20px;
-  // opacity: 0;
-  // visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 
   &--active {
     transition: 0.5s;
@@ -33,9 +33,14 @@
     cursor: pointer;
     background-color: $violet;
     font-family: $poppins;
-    font-size: clamp(0.7rem, 2vw, 1rem);
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    padding: 10px 5px 10px 5px;
     margin: 7px 0px 7px 0px;
     width: 100%;
+
+    &:hover {
+      background-color: $darkViolet;
+    }
 
     &--country {
       margin: 0px 0px 0px 7px;
