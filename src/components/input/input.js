@@ -30,7 +30,6 @@ class Input {
 
   onChange() {
     this.cityInput.addEventListener("input", (e) => {
-      
       this.showHelper(e.target.value);
     });
   }

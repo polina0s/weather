@@ -1,3 +1,4 @@
+import { doc } from "prettier";
 import { CityButton } from "../cityButton/cityButton";
 
 class Modal {
@@ -18,8 +19,13 @@ class Modal {
   }
 
   showModal(data) {
-    data.forEach((data) => this.appendCityButton(new CityButton(data).element));
-    this.addActiveClass();
+    this.modalWind.innerHTML = "";
+    if (data) {
+      data?.forEach((data) =>
+        this.appendCityButton(new CityButton(data).element)
+      );
+      this.addActiveClass();
+    }
   }
 }
 
