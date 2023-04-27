@@ -15,14 +15,16 @@ class Input {
 
   async fillHelper(value) {
     let data = await this.api.getCities(value);
-
-    this.modal.showModal(data);
+    console.log(data);
+    if (data !== undefined) {
+      this.modal.showModal(data);
+    }
   }
 
   showHelper(value) {
-    if (value.length > 2) {
+    if (value.length > 1) {
       this.fillHelper(value);
-      this.modal.addActiveClass();
+      // this.modal.addActiveClass();
     } else {
       this.modal.removeActiveClass();
     }
