@@ -18,13 +18,14 @@ class Input {
     console.log(data);
     if (data !== undefined) {
       this.modal.showModal(data);
+    } else {
+      this.modal.removeActiveClass();
     }
   }
 
   showHelper(value) {
     if (value.length > 1) {
       this.fillHelper(value);
-      // this.modal.addActiveClass();
     } else {
       this.modal.removeActiveClass();
     }
