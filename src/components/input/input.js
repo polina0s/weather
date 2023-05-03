@@ -1,5 +1,6 @@
 import { modal } from "../modal/modal";
 import { api } from "../api/api";
+import { debounce } from "../debounce/debounce";
 // import { CityButton } from "../cityButton/cityButton";
 class Input {
   constructor() {
@@ -9,13 +10,13 @@ class Input {
     this.helper = document.querySelector(".modal");
 
     this.onFocusInput();
-    this.onBlurInput();
+    // this.onBlurInput();
     this.onChange();
   }
 
   async fillHelper(value) {
     let data = await this.api.getCities(value);
-    console.log(data);
+
     if (data !== undefined) {
       this.modal.showModal(data);
     } else {
@@ -27,14 +28,15 @@ class Input {
     if (value.length > 1) {
       this.fillHelper(value);
     } else {
+      this.modal.clearModal();
       this.modal.removeActiveClass();
     }
   }
 
   onChange() {
-    this.cityInput.addEventListener("input", (e) => {
-      this.showHelper(e.target.value);
-    });
+    const debouncedChange = debounce((e) => this.showHelper(e.target.value));
+
+    this.cityInput.addEventListener("input", debouncedChange);
   }
 
   onFocusInput() {

@@ -13,6 +13,7 @@ class CityButton {
       <div class="modal-button--city">${name}</div>`;
 
     this.element.addEventListener("click", () => {
+      console.log(name);
       this.modal.removeActiveClass();
     });
   }
