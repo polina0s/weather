@@ -1,11 +1,16 @@
 import { modal } from "../modal/modal";
 class CityButton {
   constructor(data) {
-    this.createCityButton({ country: data.country, name: data.name });
+    this.createCityButton({
+      country: data.country,
+      name: data.name,
+      latitude: data.latitude,
+      longitude: data.longitude,
+    });
     this.modal = modal;
   }
 
-  createCityButton({ country, name }) {
+  createCityButton({ country, name, latitude, longitude }) {
     this.element = document.createElement("button");
     this.element.classList.add("modal-button");
 
@@ -14,6 +19,8 @@ class CityButton {
 
     this.element.addEventListener("click", () => {
       console.log(name);
+      console.log(latitude);
+      console.log(longitude);
       this.modal.removeActiveClass();
     });
   }

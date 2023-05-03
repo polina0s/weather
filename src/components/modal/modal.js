@@ -21,9 +21,9 @@ class Modal {
   showModal(data) {
     this.clearModal();
     if (data) {
-      data?.forEach((data) =>
-        this.appendCityButton(new CityButton(data).element)
-      );
+      data?.forEach((data) => {
+        this.appendCityButton(new CityButton(data).element);
+      });
       this.addActiveClass();
     }
   }

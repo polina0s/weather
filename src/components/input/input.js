@@ -1,7 +1,6 @@
 import { modal } from "../modal/modal";
 import { api } from "../api/api";
 import { debounce } from "../debounce/debounce";
-// import { CityButton } from "../cityButton/cityButton";
 class Input {
   constructor() {
     this.cityInput = document.querySelector(".weather_locationInput-input");
