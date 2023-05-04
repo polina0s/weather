@@ -21,16 +21,17 @@ class CityButton {
     this.element.addEventListener("click", () => {
       this.getWeather(latitude, longitude);
       this.modal.removeActiveClass();
+      
     });
   }
 
   async getWeather(latitude, longitude) {
     const response = await fetch(
-      `${this.weatherUrl}forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`
+      `${this.weatherUrl}forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`
     );
-    console.log(response);
-    // const json = await response.json();
-    // console.log(json);
+    // console.log(response);
+    const json = await response.json();
+    console.log(json);
   }
 }
 
