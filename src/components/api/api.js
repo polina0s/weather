@@ -1,6 +1,6 @@
 class Api {
   constructor() {
-    this.weatherUrl = import.meta.env.VITE_WEATHER_URL;
+    // this.weatherUrl = import.meta.env.VITE_WEATHER_URL;
     this.geoUrl = import.meta.env.VITE_GEO_URL;
   }
 

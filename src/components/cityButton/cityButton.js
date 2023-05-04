@@ -8,6 +8,7 @@ class CityButton {
       longitude: data.longitude,
     });
     this.modal = modal;
+    this.weatherUrl = import.meta.env.VITE_WEATHER_URL;
   }
 
   createCityButton({ country, name, latitude, longitude }) {
@@ -18,11 +19,18 @@ class CityButton {
       <div class="modal-button--city">${name}</div>`;
 
     this.element.addEventListener("click", () => {
-      console.log(name);
-      console.log(latitude);
-      console.log(longitude);
+      this.getWeather(latitude, longitude);
       this.modal.removeActiveClass();
     });
+  }
+
+  async getWeather(latitude, longitude) {
+    const response = await fetch(
+      `${this.weatherUrl}forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`
+    );
+    console.log(response);
+    // const json = await response.json();
+    // console.log(json);
   }
 }
 
