@@ -38,3 +38,41 @@ body {
     margin-left: 75px;
   }
 }
+
+.weather_forecast {
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  padding-top: 30px;
+  text-align: center;
+  // background: $lightViolet;
+  font: 400 50px $reemKufi;
+
+  &--img_cont {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    background: $lightViolet;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+
+  &--img {
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    }
+
+  &--temp {
+    font-size: 70px;
+    color: $pink;
+    margin-bottom: 15px;
+  }  
+
+  &--weather {
+    font-size: 45px;
+    color: $ligthBlue;
+  }
+}

@@ -21,7 +21,6 @@ class CityButton {
     this.element.addEventListener("click", () => {
       this.getWeather(latitude, longitude);
       this.modal.removeActiveClass();
-      
     });
   }
 
@@ -31,7 +30,8 @@ class CityButton {
     );
     // console.log(response);
     const json = await response.json();
-    console.log(json);
+    const currentWeather = json.current_weather;
+    
   }
 }
 
