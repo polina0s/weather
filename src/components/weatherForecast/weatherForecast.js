@@ -1,7 +1,16 @@
-class weatherForecast {
-  constructor() {}
+import { weathercodes } from "./weathercodes";
+export class WeatherForecast {
+  constructor(data) {
+    this.createWeatherForecast({
+      weathercode: data.weathercode,
+      temperature: data.temperature,
+      weather: data.weather
+    });
 
-  createWeatherForecast(weathercode, temperature, weather) {
+    this.weathercodes = weathercodes;
+  }
+
+  createWeatherForecast({ weathercode, temperature, weather }) {
     this.element = document.createElement("div");
     this.element.classList.add("weather_forecast");
 
@@ -9,10 +18,5 @@ class weatherForecast {
       img.weather_forecast--img(src="/src/pictures/${weathercode}.png", alt="0")
     div.weather_forecast--temp ${temperature}
     div.weather_forecast--weather ${weather}`;
-    //  div.weather_forecast
-    // div.weather_forecast--img_cont
-    //   img.weather_forecast--img(src="/src/pictures/0.png", alt="0")
-    // div.weather_forecast--temp 23°C
-    // div.weather_forecast--weather clear sky
   }
 }

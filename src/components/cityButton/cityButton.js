@@ -1,4 +1,6 @@
 import { modal } from "../modal/modal";
+import { weathercodes } from "../weatherForecast/weathercodes";
+import { WeatherForecast } from "../weatherForecast/weatherForecast";
 class CityButton {
   constructor(data) {
     this.createCityButton({
@@ -31,7 +33,6 @@ class CityButton {
     // console.log(response);
     const json = await response.json();
     const currentWeather = json.current_weather;
-    
   }
 }
 
