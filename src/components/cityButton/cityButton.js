@@ -22,19 +22,28 @@ class CityButton {
       <div class="modal-button--city">${name}</div>`;
 
     this.element.addEventListener("click", () => {
+      this.clearWeatherForecastCont();
       this.modal.removeActiveClass();
-      this
+      this.createWeatherForecastElement(latitude, longitude);
     });
   }
 
-  createWeatherForecastElement(latitude, longitude, data) {
-    this.getWeather(latitude, longitude).then((weather) =>
-      this.appendWeatherForecast(new WeatherForecast(data).element)
-    );
+  createWeatherForecastElement(latitude, longitude) {
+    this.getWeather(latitude, longitude).then((weather) => {
+      let data = {
+        weathercode: weather.weathercode,
+        temperature: weather.temperature,
+      };
+      this.appendWeatherForecast(new WeatherForecast(data).element);
+    });
   }
 
   appendWeatherForecast(element) {
     this.weatherForecast.append(element);
+  }
+
+  clearWeatherForecastCont() {
+    this.weatherForecast.innerHTML = "";
   }
 
   async getWeather(latitude, longitude) {
