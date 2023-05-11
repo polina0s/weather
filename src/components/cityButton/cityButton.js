@@ -21,18 +21,20 @@ class CityButton {
     this.element.innerHTML = `<div class="modal-button--country">${country}</div>
       <div class="modal-button--city">${name}</div>`;
 
-    this.element.addEventListener("click", () => {
+    this.element.addEventListener("click", (e) => {
       this.clearWeatherForecastCont();
       this.modal.removeActiveClass();
-      this.createWeatherForecastElement(latitude, longitude);
+      this.createWeatherForecastElement(latitude, longitude, "f");
+      console.log(this.element(".modal-button--city"));
     });
   }
 
-  createWeatherForecastElement(latitude, longitude) {
+  createWeatherForecastElement(latitude, longitude, name) {
     this.getWeather(latitude, longitude).then((weather) => {
       let data = {
         weathercode: weather.weathercode,
         temperature: weather.temperature,
+        name: name,
       };
       this.appendWeatherForecast(new WeatherForecast(data).element);
     });
