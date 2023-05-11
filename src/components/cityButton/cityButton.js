@@ -1,5 +1,5 @@
 import { modal } from "../modal/modal";
-import { weathercodes } from "../weatherForecast/weathercodes";
+import { weather, weatherImages } from "../weatherForecast/weathercodes";
 import { WeatherForecast } from "../weatherForecast/weatherForecast";
 class CityButton {
   constructor(data) {
@@ -22,9 +22,15 @@ class CityButton {
       <div class="modal-button--city">${name}</div>`;
 
     this.element.addEventListener("click", () => {
-      console.log(this.getWeather(latitude, longitude));
       this.modal.removeActiveClass();
+      this
     });
+  }
+
+  createWeatherForecastElement(latitude, longitude, data) {
+    this.getWeather(latitude, longitude).then((weather) =>
+      this.appendWeatherForecast(new WeatherForecast(data).element)
+    );
   }
 
   appendWeatherForecast(element) {

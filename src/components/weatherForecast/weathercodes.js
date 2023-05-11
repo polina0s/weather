@@ -1,4 +1,4 @@
-export let weathercodes = {
+export let weather = {
   0: "clear sky",
   1: "mainly clear",
   2: "partly cloudy",
@@ -27,4 +27,35 @@ export let weathercodes = {
   95: "thunderstorm",
   96: "thunderstorm with slight hail",
   99: "thunderstorm with heavy hail",
+};
+
+export let weatherImages = {
+  0: 0,
+  1: 1,
+  2: 1,
+  3: 1,
+  45: 45,
+  48: 45,
+  51: 51,
+  53: 51,
+  55: 51,
+  56: 51,
+  57: 51,
+  61: 61,
+  63: 61,
+  65: 65,
+  66: 65,
+  67: 65,
+  71: 71,
+  73: 71,
+  75: 71,
+  77: 71,
+  80: 61,
+  81: 61,
+  82: 65,
+  85: 71,
+  86: 71,
+  95: 95,
+  96: 96,
+  99: 96,
 };

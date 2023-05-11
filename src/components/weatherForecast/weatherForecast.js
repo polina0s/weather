@@ -1,22 +1,22 @@
-import { weathercodes } from "./weathercodes";
+import { weather, weatherImages } from "./weathercodes";
 export class WeatherForecast {
   constructor(data) {
     this.createWeatherForecast({
-      weathercode: data.weathercode,
+      weatherImage: data.weatherImage,
       temperature: data.temperature,
-      weather: data.weather
+      weather: data.weather,
     });
 
     this.weathercodes = weathercodes;
   }
 
-  createWeatherForecast({ weathercode, temperature, weather }) {
+  createWeatherForecast({ weatherImage, temperature, weather }) {
     this.element = document.createElement("div");
     this.element.classList.add("weather_forecast");
 
-    this.element.innerHTML = `div.weather_forecast--img_cont 
-      img.weather_forecast--img(src="/src/pictures/${weathercode}.png", alt="0")
-    div.weather_forecast--temp ${temperature}
-    div.weather_forecast--weather ${weather}`;
+    this.element.innerHTML = `<div class='weather_forecast--img_cont'> 
+      <img class='weather_forecast--img' src="/src/pictures/${weatherImage}.png", alt="0"></img></div>
+    <div class='weather_forecast--temp'> ${temperature} </div>
+    <div class='weather_forecast--weather'> ${weather} </div>`;
   }
 }
