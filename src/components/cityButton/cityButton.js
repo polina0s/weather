@@ -24,8 +24,7 @@ class CityButton {
     this.element.addEventListener("click", (e) => {
       this.clearWeatherForecastCont();
       this.modal.removeActiveClass();
-      this.createWeatherForecastElement(latitude, longitude, "f");
-      console.log(this.element(".modal-button--city"));
+      this.createWeatherForecastElement(latitude, longitude, name);
     });
   }
 

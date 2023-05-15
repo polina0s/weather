@@ -41,12 +41,15 @@ body {
 
 .weather_forecast {
   margin: 0 auto;
-  width: 500px;
-  height: 500px;
   padding-top: 30px;
   text-align: center;
-  // background: $lightViolet;
-  font: 400 50px $reemKufi;
+  font-family: $reemKufi;
+  font-size: clamp(30px, 5vw, 50px);
+
+  &--name {
+    color: $ligthBlue;
+    margin-bottom: 20px;
+  }
 
   &--img_cont {
     display: flex;
@@ -56,23 +59,35 @@ body {
     background: $lightViolet;
     border-radius: 50%;
     margin: 0 auto;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+
+    @include tablet {
+      width: 300px;
+      height: 300px;
+    }
   }
 
   &--img {
     margin: 0 auto;
     width: 230px;
     height: 230px;
+
+    @include tablet {
+      width: 200px;
+      height: 200px;
+    }
     }
 
   &--temp {
-    font-size: 70px;
+    font-size: clamp(50px, 7vw, 70px);
     color: $pink;
-    margin-bottom: 15px;
+    line-height: 70px;
+    margin-bottom: 20px;
   }  
 
   &--weather {
-    font-size: 45px;
+    font-size: clamp(30px, 5vw, 45px);
+    line-height: 45px;
     color: $ligthBlue;
   }
 }
