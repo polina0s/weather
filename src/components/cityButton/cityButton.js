@@ -29,7 +29,8 @@ class CityButton {
   }
 
   createWeatherForecastElement(latitude, longitude, name) {
-    this.getWeather(latitude, longitude).then((weather) => {
+    this.getCurrentWeather(latitude, longitude).then((weather) => {
+      console.log(weather);
       let data = {
         weathercode: weather.weathercode,
         temperature: weather.temperature,
@@ -37,6 +38,8 @@ class CityButton {
       };
       this.appendWeatherForecast(new WeatherForecast(data).element);
     });
+
+    this.getForecast(latitude, longitude);
   }
 
   appendWeatherForecast(element) {
@@ -47,14 +50,21 @@ class CityButton {
     this.weatherForecast.innerHTML = "";
   }
 
-  async getWeather(latitude, longitude) {
+  async getCurrentWeather(latitude, longitude) {
     const response = await fetch(
       `${this.weatherUrl}forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`
     );
-    // console.log(response);
     const json = await response.json();
     const currentWeather = json.current_weather;
     return currentWeather;
+  }
+
+  async getForecast(latitude, longitude) {
+    const response = await fetch(
+      `${this.weatherUrl}forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`
+    );
+    const json = await response.json();
+    console.log(json);
   }
 }
 
