@@ -8,6 +8,10 @@ export class WeatherForecast {
     });
   }
 
+  clear() {}
+
+  append() {}
+
   createWeatherForecast({ weathercode, temperature, name }) {
     this.element = document.createElement("div");
     this.element.classList.add("weather_forecast");

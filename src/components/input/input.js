@@ -9,7 +9,6 @@ class Input {
     this.helper = document.querySelector(".modal");
 
     this.onFocusInput();
-    // this.onBlurInput();
     this.onChange();
   }
 
@@ -41,12 +40,6 @@ class Input {
   onFocusInput() {
     this.cityInput.addEventListener("focus", (e) => {
       this.showHelper(e.target.value);
-    });
-  }
-
-  onBlurInput() {
-    this.cityInput.addEventListener("blur", () => {
-      this.modal.removeActiveClass();
     });
   }
 

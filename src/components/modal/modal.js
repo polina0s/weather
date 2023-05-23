@@ -1,9 +1,11 @@
-import { doc } from "prettier";
 import { CityButton } from "../cityButton/cityButton";
+import { weather } from "../weatherForecast/weathercodes";
 
 class Modal {
   constructor() {
     this.modalWind = document.querySelector(".modal");
+
+    this.weatherForecast = new WeatherForecast()
   }
 
   addActiveClass() {
@@ -18,11 +20,18 @@ class Modal {
     this.modalWind.append(element);
   }
 
+  handleCityClick() {
+    this.weatherForecast.clear()
+    this.modal.removeActiveClass()
+    this.weatherForecast.append()
+  }
+
   showModal(data) {
     this.clearModal();
     if (data) {
       data?.forEach((data) => {
-        this.appendCityButton(new CityButton(data).element);
+        const element = new CityButton({...data, onClick: this.handleCityClick})
+        this.appendCityButton(element);
       });
       this.addActiveClass();
     }
