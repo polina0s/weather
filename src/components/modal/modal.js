@@ -20,10 +20,14 @@ class Modal {
     this.modalWind.append(element);
   }
 
-  handleCityClick() {
+  handleCityClick({ latitude, longitude, name }) {
     this.weatherForecast.clearWeatherForecastCont();
     this.modal.removeActiveClass();
-    this.weatherForecast.appendWeatherForecast();
+    this.weatherForecast.fillWeatherForecastElement({
+      latitude,
+      longitude,
+      name,
+    });
   }
 
   showModal(data) {
@@ -32,7 +36,11 @@ class Modal {
       data?.forEach((data) => {
         const element = new CityButton({
           ...data,
-          onClick: this.handleCityClick,
+          onClick: this.handleCityClick({
+            latitude: data.latitude,
+            longitude: data.longitude,
+            name: data.name,
+          }),
         });
         this.appendCityButton(element);
       });

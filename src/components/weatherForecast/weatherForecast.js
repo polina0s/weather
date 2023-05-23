@@ -1,4 +1,5 @@
 import { weather, weatherImages } from "./weathercodes";
+import { api } from "../api/api";
 export class WeatherForecast {
   constructor(data) {
     this.createWeatherForecast({
@@ -7,6 +8,7 @@ export class WeatherForecast {
       name: data.name,
     });
 
+    this.api = api;
     this.weatherForecast = document.querySelector(".weather_forecast_cont");
   }
 
@@ -24,7 +26,7 @@ export class WeatherForecast {
   }
 
   fillWeatherForecastElement(latitude, longitude, name) {
-    this.getCurrentWeather(latitude, longitude).then((weather) => {
+    this.api.getCurrentWeather(latitude, longitude).then((weather) => {
       console.log(weather);
       let data = {
         weathercode: weather.weathercode,
@@ -34,7 +36,7 @@ export class WeatherForecast {
       this.appendWeatherForecast(new WeatherForecast(data).element);
     });
 
-    this.getForecast(latitude, longitude);
+    this.api.getForecast(latitude, longitude);
   }
 
   appendWeatherForecast(element) {
