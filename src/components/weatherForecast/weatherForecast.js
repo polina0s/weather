@@ -6,13 +6,11 @@ export class WeatherForecast {
       temperature: data.temperature,
       name: data.name,
     });
+
+    this.weatherForecast = document.querySelector(".weather_forecast_cont");
   }
 
-  clear() {}
-
-  append() {}
-
-  createWeatherForecast({ weathercode, temperature, name }) {
+  createWeatherForecastElement({ weathercode, temperature, name }) {
     this.element = document.createElement("div");
     this.element.classList.add("weather_forecast");
 
@@ -23,5 +21,27 @@ export class WeatherForecast {
     </div>
     <div class="weather_forecast--temp">${temperature}°C</div>
     <div class="weather_forecast--weather">${weather[weathercode]}</div>`;
+  }
+
+  fillWeatherForecastElement(latitude, longitude, name) {
+    this.getCurrentWeather(latitude, longitude).then((weather) => {
+      console.log(weather);
+      let data = {
+        weathercode: weather.weathercode,
+        temperature: weather.temperature,
+        name: name,
+      };
+      this.appendWeatherForecast(new WeatherForecast(data).element);
+    });
+
+    this.getForecast(latitude, longitude);
+  }
+
+  appendWeatherForecast(element) {
+    this.weatherForecast.append(element);
+  }
+
+  clearWeatherForecastCont() {
+    this.weatherForecast.innerHTML = "";
   }
 }

@@ -1,11 +1,11 @@
 import { CityButton } from "../cityButton/cityButton";
-import { weather } from "../weatherForecast/weathercodes";
+import { weather, weatherImages } from "../weatherForecast/weathercodes";
+import { WeatherForecast } from "../weatherForecast/weatherForecast";
 
 class Modal {
   constructor() {
     this.modalWind = document.querySelector(".modal");
-
-    this.weatherForecast = new WeatherForecast()
+    this.weatherForecast = new WeatherForecast();
   }
 
   addActiveClass() {
@@ -21,16 +21,19 @@ class Modal {
   }
 
   handleCityClick() {
-    this.weatherForecast.clear()
-    this.modal.removeActiveClass()
-    this.weatherForecast.append()
+    this.weatherForecast.clearWeatherForecastCont();
+    this.modal.removeActiveClass();
+    this.weatherForecast.appendWeatherForecast();
   }
 
   showModal(data) {
     this.clearModal();
     if (data) {
       data?.forEach((data) => {
-        const element = new CityButton({...data, onClick: this.handleCityClick})
+        const element = new CityButton({
+          ...data,
+          onClick: this.handleCityClick,
+        });
         this.appendCityButton(element);
       });
       this.addActiveClass();

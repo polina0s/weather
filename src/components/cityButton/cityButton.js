@@ -52,7 +52,22 @@ class CityButton {
   //   this.weatherForecast.innerHTML = "";
   // }
 
+  // async getCurrentWeather(latitude, longitude) {
+  //   const response = await fetch(
+  //     `${this.weatherUrl}forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`
+  //   );
+  //   const json = await response.json();
+  //   const currentWeather = json.current_weather;
+  //   return currentWeather;
+  // }
 
+  // async getForecast(latitude, longitude) {
+  //   const response = await fetch(
+  //     `${this.weatherUrl}forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true&forecast_days=7`
+  //   );
+  //   const json = await response.json();
+  //   console.log(json);
+  // }
 }
 
 export { CityButton };
