@@ -1,15 +1,12 @@
 import { weather, weatherImages } from "./weathercodes";
-import { api } from "../api/api";
 export class WeatherForecast {
   constructor(data) {
-    this.createWeatherForecast({
+    console.log(data);
+    this.createWeatherForecastElement({
       weathercode: data.weathercode,
       temperature: data.temperature,
       name: data.name,
     });
-
-    this.api = api;
-    this.weatherForecast = document.querySelector(".weather_forecast_cont");
   }
 
   createWeatherForecastElement({ weathercode, temperature, name }) {
@@ -23,27 +20,5 @@ export class WeatherForecast {
     </div>
     <div class="weather_forecast--temp">${temperature}°C</div>
     <div class="weather_forecast--weather">${weather[weathercode]}</div>`;
-  }
-
-  fillWeatherForecastElement(latitude, longitude, name) {
-    this.api.getCurrentWeather(latitude, longitude).then((weather) => {
-      console.log(weather);
-      let data = {
-        weathercode: weather.weathercode,
-        temperature: weather.temperature,
-        name: name,
-      };
-      this.appendWeatherForecast(new WeatherForecast(data).element);
-    });
-
-    this.api.getForecast(latitude, longitude);
-  }
-
-  appendWeatherForecast(element) {
-    this.weatherForecast.append(element);
-  }
-
-  clearWeatherForecastCont() {
-    this.weatherForecast.innerHTML = "";
   }
 }
