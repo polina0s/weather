@@ -1,12 +1,13 @@
 import { CityButton } from "../cityButton/cityButton";
-import { WeatherForecast } from "../weatherForecast/weatherForecast";
 import { WeatherForecastCont } from "../weatherForecastCont/weatherForecastCont";
+import { WeatherForecast } from "../weatherForecast/weatherForecast";
+import { weather, weatherImages } from "../weatherForecast/weathercodes";
 
 class Modal {
   constructor() {
     this.modalWind = document.querySelector(".modal");
+
     this.weatherForecastCont = new WeatherForecastCont();
-    this.weatherForecast = new WeatherForecast();
   }
 
   addActiveClass() {
@@ -17,41 +18,42 @@ class Modal {
     this.modalWind.classList.remove("modal--active");
   }
 
+  clearModal() {
+    this.modalWind.innerHTML = "";
+  }
+
   appendCityButton(element) {
     this.modalWind.append(element);
   }
 
-  handleCityClick({ latitude, longitude, name }) {
+  handleCityClick(data) {
     this.weatherForecastCont.clearWeatherForecastCont();
     this.removeActiveClass();
-
-    this.weatherForecast.fillWeatherForecastElement({
-      latitude,
-      longitude,
-      name,
+    this.weatherForecastCont.fillWeatherForecastElement({
+      latitude: data.latitude,
+      longitude: data.longitude,
+      name: data.name,
     });
   }
 
   showModal(data) {
     this.clearModal();
     if (data) {
-      data?.forEach((data) => {
+      data?.forEach((el) => {
         const element = new CityButton({
-          ...data,
-          onClick: this.handleCityClick({
-            latitude: data.latitude,
-            longitude: data.longitude,
-            name: data.name,
-          }),
+          ...el,
+          onClick: () =>
+            this.handleCityClick({
+              latitude: el.latitude,
+              longitude: el.longitude,
+              name: el.name,
+            }),
         });
-        this.appendCityButton(element);
+
+        this.appendCityButton(element.element);
       });
       this.addActiveClass();
     }
-  }
-
-  clearModal() {
-    this.modalWind.innerHTML = "";
   }
 }
 

@@ -1,4 +1,5 @@
 import { api } from "../api/api";
+import { WeatherForecast } from "../weatherForecast/weatherForecast";
 
 export class WeatherForecastCont {
   constructor() {
@@ -6,9 +7,8 @@ export class WeatherForecastCont {
     this.api = api;
   }
 
-  fillWeatherForecastElement(latitude, longitude, name) {
+  fillWeatherForecastElement({ latitude, longitude, name }) {
     this.api.getCurrentWeather(latitude, longitude).then((weather) => {
-      console.log(weather);
       let data = {
         weathercode: weather.weathercode,
         temperature: weather.temperature,

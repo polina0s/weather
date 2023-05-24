@@ -1,7 +1,6 @@
 import { weather, weatherImages } from "./weathercodes";
 export class WeatherForecast {
   constructor(data) {
-    console.log(data);
     this.createWeatherForecastElement({
       weathercode: data.weathercode,
       temperature: data.temperature,
