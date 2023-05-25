@@ -17,7 +17,10 @@ export class WeatherForecastCont {
       this.appendWeatherForecast(new WeatherForecast(data).element);
     });
 
-    this.api.getForecast(latitude, longitude);
+    this.api.getForecast(latitude, longitude).then((forecast) => {
+      console.log(forecast.temperature_2m);
+      console.log(forecast.time);
+    });
   }
 
   clearWeatherForecastCont() {

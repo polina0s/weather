@@ -24,6 +24,8 @@ class Api {
       `${this.weatherUrl}forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true&forecast_days=7`
     );
     const json = await response.json();
+    const forecast = json.hourly;
+    return forecast;
   }
 }
 

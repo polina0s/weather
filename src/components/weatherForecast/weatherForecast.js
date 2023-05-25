@@ -18,6 +18,36 @@ export class WeatherForecast {
       <img class="weather_forecast--img" src="/src/pictures/${weatherImages[weathercode]}.png" alt="weather" />
     </div>
     <div class="weather_forecast--temp">${temperature}°C</div>
-    <div class="weather_forecast--weather">${weather[weathercode]}</div>`;
+    <div class="weather_forecast--weather">${weather[weathercode]}</div>
+    <div class="weather_forecast--weekly">
+      <div class="weather_forecast--weekly_c">
+        <div class="weather_forecast--weekly_c--day"> mon </div>
+        <div class="weather_forecast--weekly_c--temp"> 12 </div>
+      </div>
+      <div class="weather_forecast--weekly_c">
+        <div class="weather_forecast--weekly_c--day"> mon </div>
+        <div class="weather_forecast--weekly_c--temp"> 12 </div>
+      </div>
+      <div class="weather_forecast--weekly_c">
+        <div class="weather_forecast--weekly_c--day"> mon </div>
+        <div class="weather_forecast--weekly_c--temp"> 12 </div>
+      </div>
+      <div class="weather_forecast--weekly_c">
+        <div class="weather_forecast--weekly_c--day"> mon </div>
+        <div class="weather_forecast--weekly_c--temp"> 12 </div>
+      </div>
+      <div class="weather_forecast--weekly_c">
+        <div class="weather_forecast--weekly_c--day"> mon </div>
+        <div class="weather_forecast--weekly_c--temp"> 12 </div>
+      </div>
+      <div class="weather_forecast--weekly_c">
+        <div class="weather_forecast--weekly_c--day"> mon </div>
+        <div class="weather_forecast--weekly_c--temp"> 12 </div>
+      </div>
+      <div class="weather_forecast--weekly_c">
+        <div class="weather_forecast--weekly_c--day"> mon </div>
+        <div class="weather_forecast--weekly_c--temp"> 12 </div>
+      </div>
+    </div>`;
   }
 }

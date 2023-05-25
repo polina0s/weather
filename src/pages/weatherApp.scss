@@ -46,6 +46,36 @@ body {
   font-family: $reemKufi;
   font-size: clamp(30px, 5vw, 50px);
 
+  &--weekly {
+    display: flex;
+    justify-content: space-between;
+    font-family: $reemKufi;
+  }
+
+  &--weekly_c {
+    width: 130px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: $lightViolet;  
+    text-align: center;
+    font-size: 30px;
+    padding-top: 15px;
+    // vertical-align: middle;    
+
+    &--day {
+      color: $pink;
+      line-height: 25px;
+      margin: 0px;
+      padding-bottom: 10px;
+    }
+
+    &--temp {
+      color: $ligthBlue;
+      line-height: 25px;
+      margin: 0px;
+    }
+  }
+
   &--name {
     color: $ligthBlue;
     margin-bottom: 20px;
@@ -89,5 +119,6 @@ body {
     font-size: clamp(30px, 5vw, 45px);
     line-height: 45px;
     color: $ligthBlue;
+    margin-bottom: 50px;
   }
 }
