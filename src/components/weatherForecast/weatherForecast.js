@@ -10,15 +10,15 @@ export class WeatherForecast {
 
   createWeatherForecastElement({ weathercode, temperature, name }) {
     this.element = document.createElement("div");
-    this.element.classList.add("weather_forecast");
+    this.element.classList.add("weather_cur");
 
     this.element.innerHTML = `
-    <div class="weather_forecast--name">${name}</div>
-    <div class="weather_forecast--img_cont">
-      <img class="weather_forecast--img" src="/src/pictures/${weatherImages[weathercode]}.png" alt="weather" />
+    <div class="weather_cur--name">${name}</div>
+    <div class="weather_cur--img_cont">
+      <img class="weather_cur--img" src="/src/pictures/${weatherImages[weathercode]}.png" alt="weather" />
     </div>
-    <div class="weather_forecast--temp">${temperature}°C</div>
-    <div class="weather_forecast--weather">${weather[weathercode]}</div>
+    <div class="weather_cur--temp">${temperature}°C</div>
+    <div class="weather_cur--descrip">${weather[weathercode]}</div>
     <div class="weather_forecast--weekly">
       <div class="weather_forecast--weekly_c">
         <div class="weather_forecast--weekly_c--day"> mon </div>

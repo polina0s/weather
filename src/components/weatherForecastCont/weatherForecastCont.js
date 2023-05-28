@@ -3,7 +3,7 @@ import { WeatherForecast } from "../weatherForecast/weatherForecast";
 
 export class WeatherForecastCont {
   constructor() {
-    this.weatherForecastCont = document.querySelector(".weather_forecast_cont");
+    this.weatherForecastCont = document.querySelector(".weather_cont");
     this.api = api;
   }
 
@@ -17,10 +17,12 @@ export class WeatherForecastCont {
       this.appendWeatherForecast(new WeatherForecast(data).element);
     });
 
-    this.api.getForecast(latitude, longitude).then((forecast) => {
-      console.log(forecast.temperature_2m);
-      console.log(forecast.time);
-    });
+    // this.api.getForecast(latitude, longitude).then((forecast) => {
+    //   console.log(forecast.temperature_2m);
+    //   console.log(forecast.time);
+    //   let curr = new Date();
+    //   console.log(curr);
+    // });
   }
 
   clearWeatherForecastCont() {
