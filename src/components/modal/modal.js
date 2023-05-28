@@ -1,7 +1,5 @@
 import { CityButton } from "../cityButton/cityButton";
 import { WeatherCont } from "../weatherCont/weatherCont";
-import { CurrentWeather } from "../weatherForecast/currentWeather";
-import { weather, weatherImages } from "../weatherForecast/weathercodes";
 
 class Modal {
   constructor() {

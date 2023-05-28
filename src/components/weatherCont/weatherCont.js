@@ -1,5 +1,5 @@
 import { api } from "../api/api";
-import { CurrentWeather } from "../weatherForecast/currentWeather";
+import { CurrentWeather } from "../currentWeather/currentWeather";
 
 export class WeatherCont {
   constructor() {
@@ -14,7 +14,7 @@ export class WeatherCont {
         temperature: weather.temperature,
         name: name,
       };
-      this.appendWeather(new CurrentWeather(data).element);
+      this.appendCurrentWeather(new CurrentWeather(data).element);
     });
 
     // this.api.getForecast(latitude, longitude).then((forecast) => {
@@ -29,7 +29,7 @@ export class WeatherCont {
     this.weatherCont.innerHTML = "";
   }
 
-  appendWeather(element) {
+  appendCurrentWeather(element) {
     this.weatherCont.append(element);
   }
 }
