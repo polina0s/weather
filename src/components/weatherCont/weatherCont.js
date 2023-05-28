@@ -17,12 +17,14 @@ export class WeatherCont {
       this.appendCurrentWeather(new CurrentWeather(data).element);
     });
 
-    // this.api.getForecast(latitude, longitude).then((forecast) => {
-    //   console.log(forecast.temperature_2m);
-    //   console.log(forecast.time);
-    //   let curr = new Date();
-    //   console.log(curr);
-    // });
+    this.api.getForecast(latitude, longitude).then((forecast) => {
+      console.log(forecast.temperature_2m);
+      console.log(forecast.time);
+      let curr = new Date();
+      // let firstEl = curr.getHours() + 24;
+      // let secEl = curr.getHours() + 48;
+      console.log(`${curr.getDate()}.${curr.getMonth()}`);
+    });
   }
 
   clearWeatherCont() {
