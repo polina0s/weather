@@ -1,5 +1,5 @@
 import { CityButton } from "../cityButton/cityButton";
-import { WeatherForecastCont } from "../weatherForecastCont/weatherForecastCont";
+import { WeatherCont } from "../weatherCont/weatherCont";
 import { CurrentWeather } from "../weatherForecast/currentWeather";
 import { weather, weatherImages } from "../weatherForecast/weathercodes";
 
@@ -7,7 +7,7 @@ class Modal {
   constructor() {
     this.modalWind = document.querySelector(".modal");
 
-    this.weatherForecastCont = new WeatherForecastCont();
+    this.weatherCont = new WeatherCont();
   }
 
   addActiveClass() {
@@ -27,9 +27,9 @@ class Modal {
   }
 
   handleCityClick(data) {
-    this.weatherForecastCont.clearWeatherForecastCont();
+    this.weatherCont.clearWeatherCont();
     this.removeActiveClass();
-    this.weatherForecastCont.fillWeatherForecastElement({
+    this.weatherCont.fillWeatherElement({
       latitude: data.latitude,
       longitude: data.longitude,
       name: data.name,

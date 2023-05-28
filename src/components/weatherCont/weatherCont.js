@@ -1,20 +1,20 @@
 import { api } from "../api/api";
 import { CurrentWeather } from "../weatherForecast/currentWeather";
 
-export class WeatherForecastCont {
+export class WeatherCont {
   constructor() {
-    this.weatherForecastCont = document.querySelector(".weather_cont");
+    this.weatherCont = document.querySelector(".weather_cont");
     this.api = api;
   }
 
-  fillWeatherForecastElement({ latitude, longitude, name }) {
+  fillWeatherElement({ latitude, longitude, name }) {
     this.api.getCurrentWeather(latitude, longitude).then((weather) => {
       let data = {
         weathercode: weather.weathercode,
         temperature: weather.temperature,
         name: name,
       };
-      this.appendWeatherForecast(new CurrentWeather(data).element);
+      this.appendWeather(new CurrentWeather(data).element);
     });
 
     // this.api.getForecast(latitude, longitude).then((forecast) => {
@@ -25,11 +25,11 @@ export class WeatherForecastCont {
     // });
   }
 
-  clearWeatherForecastCont() {
-    this.weatherForecastCont.innerHTML = "";
+  clearWeatherCont() {
+    this.weatherCont.innerHTML = "";
   }
 
-  appendWeatherForecast(element) {
-    this.weatherForecastCont.append(element);
+  appendWeather(element) {
+    this.weatherCont.append(element);
   }
 }

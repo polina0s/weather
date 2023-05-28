@@ -95,30 +95,29 @@ body {
     margin-bottom: 50px;
   }
 
-  &--weekly {
+  &_week_cont {
     display: flex;
     justify-content: space-between;
     font-family: $reemKufi;
   }
 
-  &--weekly_c {
+  &_week--el {
     width: 130px;
     height: 100px;
     border-radius: 10px;
     background-color: $lightViolet;  
     text-align: center;
     font-size: 30px;
-    padding-top: 15px;
-    // vertical-align: middle;    
+    padding-top: 15px; 
 
-    &--day {
+    &_week--day {
       color: $pink;
       line-height: 25px;
       margin: 0px;
       padding-bottom: 10px;
     }
 
-    &--temp {
+    &_week--temp {
       color: $ligthBlue;
       line-height: 25px;
       margin: 0px;

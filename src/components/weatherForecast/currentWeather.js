@@ -19,34 +19,34 @@ export class CurrentWeather {
     </div>
     <div class="weather_cur--temp">${temperature}°C</div>
     <div class="weather_cur--descrip">${weather[weathercode]}</div>`;
-    // <div class="weather_forecast--weekly">
-    //   <div class="weather_forecast--weekly_c">
-    //     <div class="weather_forecast--weekly_c--day"> mon </div>
-    //     <div class="weather_forecast--weekly_c--temp"> 12 </div>
+    // <div class="weather_week_cont">
+    //   <div class="weather_week--el">
+    //     <div class="weather_week--day"> mon </div>
+    //     <div class="weather_week--temp"> 12 </div>
     //   </div>
-    //   <div class="weather_forecast--weekly_c">
-    //     <div class="weather_forecast--weekly_c--day"> mon </div>
-    //     <div class="weather_forecast--weekly_c--temp"> 12 </div>
+    //   <div class="weather_week--el">
+    //     <div class="weather_week--day"> mon </div>
+    //     <div class="weather_week--temp"> 12 </div>
     //   </div>
-    //   <div class="weather_forecast--weekly_c">
-    //     <div class="weather_forecast--weekly_c--day"> mon </div>
-    //     <div class="weather_forecast--weekly_c--temp"> 12 </div>
+    //   <div class="weather_week--el">
+    //     <div class="weather_week--day"> mon </div>
+    //     <div class="weather_week--temp"> 12 </div>
     //   </div>
-    //   <div class="weather_forecast--weekly_c">
-    //     <div class="weather_forecast--weekly_c--day"> mon </div>
-    //     <div class="weather_forecast--weekly_c--temp"> 12 </div>
+    //   <div class="weather_week--el">
+    //     <div class="weather_week--day"> mon </div>
+    //     <div class="weather_week--temp"> 12 </div>
     //   </div>
-    //   <div class="weather_forecast--weekly_c">
-    //     <div class="weather_forecast--weekly_c--day"> mon </div>
-    //     <div class="weather_forecast--weekly_c--temp"> 12 </div>
+    //   <div class="weather_week--el">
+    //     <div class="weather_week--day> mon </div>
+    //     <div class="weather_week--temp"> 12 </div>
     //   </div>
-    //   <div class="weather_forecast--weekly_c">
-    //     <div class="weather_forecast--weekly_c--day"> mon </div>
-    //     <div class="weather_forecast--weekly_c--temp"> 12 </div>
+    //   <div class="weather_week--el">
+    //     <div class="weather_week--day"> mon </div>
+    //     <div class="weather_week--temp"> 12 </div>
     //   </div>
-    //   <div class="weather_forecast--weekly_c">
-    //     <div class="weather_forecast--weekly_c--day"> mon </div>
-    //     <div class="weather_forecast--weekly_c--temp"> 12 </div>
+    //   <div class="weather_week--el">
+    //     <div class="weather_week--day"> mon </div>
+    //     <div class="weather_week--temp"> 12 </div>
     //   </div>
     // </div>
   }
