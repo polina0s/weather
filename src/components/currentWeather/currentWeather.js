@@ -21,4 +21,10 @@ export class CurrentWeather {
     <div class="weather_cur--temp">${temperature}°C</div>
     <div class="weather_cur--descrip">${weather[weathercode]}</div>`;
   }
+
+  endTransition() {
+    setTimeout(() => {
+      this.element.classList.add("weather_cur--end");
+    }, 10);
+  }
 }

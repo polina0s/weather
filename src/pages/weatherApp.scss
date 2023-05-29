@@ -47,6 +47,12 @@ body {
   text-align: center;
   font-family: $reemKufi;
   font-size: clamp(30px, 5vw, 50px);
+  opacity: 0;
+  transition: 0.3s opacity;
+  
+  &--end {
+    opacity: 1;
+  }
   }
 
   &_cur--name {

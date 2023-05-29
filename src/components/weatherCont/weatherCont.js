@@ -7,24 +7,31 @@ export class WeatherCont {
     this.api = api;
   }
 
-  fillWeatherElement({ latitude, longitude, name }) {
+  fillCurrentWeatherElement({ latitude, longitude, name }) {
     this.api.getCurrentWeather(latitude, longitude).then((weather) => {
       let data = {
         weathercode: weather.weathercode,
         temperature: weather.temperature,
         name: name,
       };
-      this.appendCurrentWeather(new CurrentWeather(data).element);
+
+      this.currentWeather = new CurrentWeather(data);
+
+      this.appendCurrentWeather(this.currentWeather.element);
     });
 
-    this.api.getForecast(latitude, longitude).then((forecast) => {
-      console.log(forecast.temperature_2m);
-      console.log(forecast.time);
-      let curr = new Date();
-      // let firstEl = curr.getHours() + 24;
-      // let secEl = curr.getHours() + 48;
-      console.log(`${curr.getDate()}.${curr.getMonth()}`);
-    });
+    // this.api.getForecast(latitude, longitude).then((forecast) => {
+    //   let temp = forecast.temperature_2m;
+    //   let timeArr = forecast.time;
+    //   let date = [];
+
+    //   for (let i = 0; i < timeArr.length; i++) {
+    //     let y = timeArr[i].substring(5, 10).replaceAll("-", ".");
+    //     date.push(y);
+    //   }
+
+    //   console.log(date);
+    // });
   }
 
   clearWeatherCont() {
@@ -33,5 +40,6 @@ export class WeatherCont {
 
   appendCurrentWeather(element) {
     this.weatherCont.append(element);
+    this.currentWeather.endTransition();
   }
 }

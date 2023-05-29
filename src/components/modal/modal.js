@@ -6,6 +6,7 @@ class Modal {
     this.modalWind = document.querySelector(".modal");
 
     this.weatherCont = new WeatherCont();
+    this.currWeather = document.querySelector(".weather_cur");
   }
 
   addActiveClass() {
@@ -27,7 +28,7 @@ class Modal {
   handleCityClick(data) {
     this.weatherCont.clearWeatherCont();
     this.removeActiveClass();
-    this.weatherCont.fillWeatherElement({
+    this.weatherCont.fillCurrentWeatherElement({
       latitude: data.latitude,
       longitude: data.longitude,
       name: data.name,
