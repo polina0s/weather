@@ -62,6 +62,6 @@ export class WeatherCont {
   }
 
   appendWeekeather(element) {
-    this.weatherCont.append(element);
+    this.weatherCont.appendChild(element);
   }
 }
