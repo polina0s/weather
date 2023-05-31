@@ -7,35 +7,27 @@ export class WeekWeather {
     this.element = document.createElement("div");
     this.element.classList.add("weather_week");
 
+    console.log(time, temp);
+
     this.element.innerHTML = `
     <div class="weather_week--el">
-      <div class="weather_week--day"> ${time[23]} </div>
-      <div class="weather_week--temp"> ${temp[23]}°C </div>
+      <div class="weather_week--day"> ${time[24]} <br> ${temp[24]}°C </div>
     </div>  
     <div class="weather_week--el">
-      <div class="weather_week--day"> ${time[47]} </div>
-      <div class="weather_week--temp"> ${temp[47]}°C </div>
+      <div class="weather_week--day"> ${time[48]} <br> ${temp[48]}°C </div>
     </div>  
     <div class="weather_week--el">
-      <div class="weather_week--day"> ${time[71]} </div>
-      <div class="weather_week--temp"> ${temp[71]}°C </div>
+      <div class="weather_week--day"> ${time[72]} <br> ${temp[72]}°C </div>
     </div>  
     <div class="weather_week--el">
-      <div class="weather_week--day"> ${time[95]} </div>
-      <div class="weather_week--temp"> ${temp[95]}°C </div>
+      <div class="weather_week--day"> ${time[96]} <br> ${temp[96]}°C </div>
     </div>  
     <div class="weather_week--el">
-      <div class="weather_week--day"> ${time[119]} </div>
-      <div class="weather_week--temp"> ${temp[119]}°C </div>
+      <div class="weather_week--day"> ${time[120]} <br> ${temp[120]}°C </div>
     </div>  
     <div class="weather_week--el">
-      <div class="weather_week--day"> ${time[143]} </div>
-      <div class="weather_week--temp"> ${temp[143]}°C </div>
-    </div>  
-    <div class="weather_week--el">
-      <div class="weather_week--day"> ${time[167]} </div>
-      <div class="weather_week--temp"> ${temp[167]}°C </div>
-    </div>              
+      <div class="weather_week--day"> ${time[144]} <br> ${temp[144]}°C </div>
+    </div>            
     `;
   }
 }

@@ -102,7 +102,10 @@ body {
   }
 
   &_week {
+    width: 70vw;
+    margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     font-family: $reemKufi;
   }
@@ -113,20 +116,15 @@ body {
     border-radius: 10px;
     background-color: $lightViolet;  
     text-align: center;
-    font-size: 30px;
-    padding-top: 15px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
     &_week--day {
-      color: $pink;
-      line-height: 25px;
-      margin: 0px;
-      padding-bottom: 10px;
-    }
-
-    &_week--temp {
       color: $ligthBlue;
-      line-height: 25px;
       margin: 0px;
+      font-size: 30px;
+      line-height: 30px;
     }
 }
