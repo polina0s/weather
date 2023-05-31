@@ -26,7 +26,8 @@ class Modal {
   }
 
   handleCityClick(data) {
-    this.weatherCont.clearWeatherCont();
+    this.weatherCont.clearWeatherContCur();
+    this.weatherCont.clearWeatherContWeek();
     this.removeActiveClass();
     this.weatherCont.fillCurrentWeatherElement({
       latitude: data.latitude,

@@ -4,7 +4,8 @@ import { WeekWeather } from "../weekWeather/weekWeather";
 
 export class WeatherCont {
   constructor() {
-    this.weatherCont = document.querySelector(".weather_cont");
+    this.weatherContCur = document.querySelector(".weather_cont--cur");
+    this.weatherContWeek = document.querySelector(".weather_cont--week");
     this.api = api;
   }
 
@@ -52,16 +53,20 @@ export class WeatherCont {
     });
   }
 
-  clearWeatherCont() {
-    this.weatherCont.innerHTML = "";
+  clearWeatherContCur() {
+    this.weatherContCur.innerHTML = "";
+  }
+
+  clearWeatherContWeek() {
+    this.weatherContWeek.innerHTML = "";
   }
 
   appendCurrentWeather(element) {
-    this.weatherCont.append(element);
+    this.weatherContCur.append(element);
     this.currentWeather.endTransition();
   }
 
   appendWeekeather(element) {
-    this.weatherCont.appendChild(element);
+    this.weatherContWeek.appendChild(element);
   }
 }
