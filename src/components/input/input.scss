@@ -1,5 +1,6 @@
 .input {
-  width: 750px;
+  // width: 750px;
+  width: clamp(400px, 70vw, 750px);
   height: 50px;
   outline: none;
   border: none;
@@ -9,19 +10,19 @@
   background: $lightViolet;
   font-size: clamp(1rem, 2.8vw, 1.5rem);
 
-  @include laptop {
-    width: 100%;
-    max-width: 600px;
-  }
+  // @include laptop {
+  //   width: 100%;
+  //   max-width: 600px;
+  // }
 
-  @include tablet {
-    width: 100%;
-    max-width: 550px;
-    // font-size: 1.5rem;
-  }
+  // @include tablet {
+  //   width: 100%;
+  //   max-width: 550px;
+  //   // font-size: 1.5rem;
+  // }
 
-  @include  mobile {
-    width: 100%;
-    max-width: 400px;
-  }
+  // @include  mobile {
+  //   width: 100%;
+  //   max-width: 400px;
+  // }
 }

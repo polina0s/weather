@@ -1,5 +1,6 @@
 .modal {
-  width: 750px;
+  // width: 750px;
+  width: clamp(400px, 70vw, 750px);
   height: auto;
   background: $lightViolet;
   border-radius: 25px;
@@ -15,18 +16,18 @@
     visibility: visible;
   }
 
-  @include laptop {
-    width: 600px;
-  }
+  // @include laptop {
+  //   width: 600px;
+  // }
 
-  @include tablet {
-    width: 550px;
-  }
+  // @include tablet {
+  //   width: 550px;
+  // }
 
-  @include  mobile {
-    width: 100%;
-    max-width: 300px;
-  }
+  // @include  mobile {
+  //   width: 100%;
+  //   max-width: 300px;
+  // }
 
   &-button {
     display: flex;
@@ -46,20 +47,21 @@
 
     &--country {
       margin: 0px 0px 0px 7px;
-      width: 200px;
+      // width: 200px;
+      width: clamp(130px, 30vw, 200px);
       text-align: left;
 
-      @include laptop {
-        width: 180px;
-      }
+      // @include laptop {
+      //   width: 180px;
+      // }
 
-      @include tablet {
-        width: 170px;
-      }
+      // @include tablet {
+      //   width: 170px;
+      // }
 
-      @include mobile {
-        width: 130px;
-      }
+      // @include mobile {
+      //   width: 130px;
+      // }
     }
   }
 }
