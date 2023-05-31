@@ -1,6 +1,6 @@
 .modal {
   // width: 750px;
-  width: clamp(400px, 70vw, 750px);
+  width: clamp(250px, 70vw, 750px);
   height: auto;
   background: $lightViolet;
   border-radius: 25px;
@@ -48,7 +48,7 @@
     &--country {
       margin: 0px 0px 0px 7px;
       // width: 200px;
-      width: clamp(130px, 30vw, 200px);
+      width: clamp(100px, 30vw, 200px);
       text-align: left;
 
       // @include laptop {

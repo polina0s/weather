@@ -16,19 +16,29 @@ body {
   background: $violet;
   padding: 60px 30px 0px 30px;
 
+  @include mobile {
+    padding: 30px 10px 30px 10px;
+  }
+
   &_locationInput {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
 
     &-pin {
-      width: 60px;
-      height: 60px;
+      // width: 60px;
+      // height: 60px;
+      width: clamp(30px, 15vw, 60px);
+      height: clamp(30px, 15vh, 60px);
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-position: center;
       background-image: url(../pictures/location.png);
       margin-right: 10px;
+
+      @include tablet {
+        margin-right: 5px;
+      }
     }
   }
 
@@ -36,14 +46,17 @@ body {
     display: flex;
     justify-content: center;
     margin-left: 75px;
+
+    @include mobile {
+      margin-right: 15px;
+    }
   }
 }
 
 .weather {
-
+  
   &_cur {
   margin: 0 auto;
-  padding-top: 30px;
   text-align: center;
   font-family: $reemKufi;
   font-size: clamp(30px, 5vw, 50px);
@@ -94,6 +107,7 @@ body {
   &_week {
     width: clamp(300px, 70vw, 850px);
     margin: 0 auto;
+    margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
