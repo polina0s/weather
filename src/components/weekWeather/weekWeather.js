@@ -30,4 +30,10 @@ export class WeekWeather {
     </div>            
     `;
   }
+
+  endTransition() {
+    setTimeout(() => {
+      this.element.classList.add("weather_week--end");
+    }, 10);
+  }
 }
