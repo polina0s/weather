@@ -63,28 +63,29 @@ body {
   &_cur--img_cont {
     display: flex;
     align-items: center;
-    width: 350px;
-    height: 350px;
+    width: clamp(270px, 30vw, 350px);
+    height: clamp(270px, 30vw, 350px);
     background: $lightViolet;
     border-radius: 50%;
     margin: 0 auto;
     margin-bottom: 20px;
 
-    @include tablet {
-      width: 300px;
-      height: 300px;
-    }
+    // @include tablet {
+    //   width: 300px;
+    //   height: 300px;
+    // }
+
   }
 
   &_cur--img {
     margin: 0 auto;
-    width: 220px;
-    height: 220px;
+    width: clamp(190px, 15vw, 220px);
+    height: clamp(190px, 15vw, 220px);
 
-    @include tablet {
-      width: 200px;
-      height: 200px;
-    }
+    // @include tablet {
+    //   width: 200px;
+    //   height: 200px;
+    // }
   }
 
   &_cur--temp {
@@ -102,7 +103,7 @@ body {
   }
 
   &_week {
-    width: 70vw;
+    width: clamp(300px, 70vw, 850px);
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -111,7 +112,7 @@ body {
   }
 
   &_week--el {
-    width: 130px;
+    width: clamp(100px, 10vw, 130px);
     height: 100px;
     border-radius: 10px;
     background-color: $lightViolet;  
@@ -119,12 +120,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1 1 100px;
+    margin: 10px;
   }
 
     &_week--day {
       color: $ligthBlue;
       margin: 0px;
-      font-size: 30px;
+      font-size: clamp(25px, 5vw, 30px);
       line-height: 30px;
     }
 }
