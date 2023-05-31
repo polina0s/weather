@@ -54,7 +54,7 @@ body {
 }
 
 .weather {
-  
+
   &_cur {
   margin: 0 auto;
   text-align: center;
@@ -82,6 +82,10 @@ body {
     border-radius: 50%;
     margin: 0 auto;
     margin-bottom: 20px;
+
+    @include mobile {
+      margin-bottom: 15px;
+    }
   }
 
   &_cur--img {
@@ -95,6 +99,10 @@ body {
     color: $pink;
     line-height: 70px;
     margin-bottom: 20px;
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
   }  
 
   &_cur--descrip {
@@ -102,6 +110,14 @@ body {
     line-height: 45px;
     color: $ligthBlue;
     margin-bottom: 50px;
+
+    @include laptop {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
 
   &_week {
