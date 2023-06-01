@@ -26,10 +26,8 @@ body {
     margin-bottom: 15px;
 
     &-pin {
-      // width: 60px;
-      // height: 60px;
-      width: clamp(20px, 15vw, 60px);
-      height: clamp(20px, 15vh, 60px);
+      width: clamp(20px, 10vw, 60px);
+      height: clamp(20px, 10vw, 60px);
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-position: center;
@@ -54,30 +52,23 @@ body {
 }
 
 .cur-weather {
-  
-}
-
-.weather {
-
-  &_cur {
   margin: 0 auto;
   text-align: center;
   font-family: $reemKufi;
   font-size: clamp(30px, 5vw, 50px);
   opacity: 0;
   transition: 0.5s opacity;
-  
-    &--end {
-      opacity: 1;
-    }
+
+  &--end {
+    opacity: 1;
   }
 
-  &_cur--name {
+  &__name {
     color: $ligthBlue;
     margin-bottom: 20px;
   }
 
-  &_cur--img_cont {
+  &__img-cont {
     display: flex;
     align-items: center;
     width: clamp(270px, 30vw, 350px);
@@ -92,13 +83,13 @@ body {
     }
   }
 
-  &_cur--img {
+  &__img {
     margin: 0 auto;
     width: clamp(190px, 15vw, 220px);
     height: clamp(190px, 15vw, 220px);
   }
 
-  &_cur--temp {
+  &__temp {
     font-size: clamp(50px, 7vw, 70px);
     color: $pink;
     line-height: 70px;
@@ -107,9 +98,9 @@ body {
     @include mobile {
       margin-bottom: 10px;
     }
-  }  
+  } 
 
-  &_cur--descrip {
+  &__descrip {
     font-size: clamp(30px, 5vw, 45px);
     line-height: 45px;
     color: $ligthBlue;
@@ -123,25 +114,25 @@ body {
       margin-bottom: 20px;
     }
   }
+}
 
-  &_week {
-    width: clamp(300px, 70vw, 900px);
-    margin: 0 auto;
-    margin-bottom: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-family: $reemKufi;
-    gap: 10px;
-    opacity: 0;
-    transition: 0.5s opacity;
+.week-weather {
+  width: clamp(300px, 70vw, 900px);
+  margin: 0 auto;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: $reemKufi;
+  gap: 10px;
+  opacity: 0;
+  transition: 0.5s opacity;
   
-    &--end {
-      opacity: 1;
-    }
+  &--end {
+    opacity: 1;
   }
 
-  &_week--el {
+  &__el {
     width: clamp(100px, 10vw, 130px);
     height: 100px;
     border-radius: 10px;
@@ -157,10 +148,10 @@ body {
     }
   }
 
-    &_week--day {
-      color: $ligthBlue;
-      margin: 0px;
-      font-size: clamp(25px, 5vw, 30px);
-      line-height: 30px;
-    }
+  &__day {
+    color: $ligthBlue;
+    margin: 0px;
+    font-size: clamp(25px, 5vw, 30px);
+    line-height: 30px;
+  }
 }

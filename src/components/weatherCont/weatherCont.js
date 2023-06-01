@@ -11,8 +11,8 @@ import { WeekWeather } from "../weekWeather/weekWeather";
  */
 export class WeatherCont {
   constructor() {
-    this.weatherContCur = document.querySelector(".weather_cont--cur"); //weather-cont__cur
-    this.weatherContWeek = document.querySelector(".weather_cont--week"); //weather-cont__week
+    this.weatherContCur = document.querySelector(".weather-cont__cur"); //weather-cont__cur
+    this.weatherContWeek = document.querySelector(".weather-cont__week"); //weather-cont__week
   }
 
   convertTimeToDates(time) {

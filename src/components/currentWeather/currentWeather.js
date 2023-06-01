@@ -11,20 +11,20 @@ export class CurrentWeather {
 
   createCurrentWeatherElement({ weathercode, temperature, name }) {
     this.element = document.createElement("div");
-    this.element.classList.add("weather_cur");
+    this.element.classList.add("cur-weather");
 
     this.element.innerHTML = `
-    <div class="weather_cur--name">${name}</div>
-    <div class="weather_cur--img_cont">
-      <img class="weather_cur--img" src="/src/pictures/${weatherImages[weathercode]}.png" alt="weather" />
+    <div class="cur-weather__name">${name}</div>
+    <div class="cur-weather__img-cont">
+      <img class="cur-weather__img" src="/src/pictures/${weatherImages[weathercode]}.png" alt="weather" />
     </div>
-    <div class="weather_cur--temp">${temperature}°C</div>
-    <div class="weather_cur--descrip">${weather[weathercode]}</div>`;
+    <div class="cur-weather__temp">${temperature}°C</div>
+    <div class="cur-weather__descrip">${weather[weathercode]}</div>`;
   }
 
   endTransition() {
     setTimeout(() => {
-      this.element.classList.add("weather_cur--end");
+      this.element.classList.add("cur-weather--end");
     }, 10);
   }
 }
