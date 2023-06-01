@@ -1,3 +1,9 @@
+# Commands
+
+1. 'dev' - start Vite dev server in the current directory
+2. 'build' - build for production
+3. 'preview' - locally preview the production build
+
 # Getting env VITE_WEATHER_URL
 
 1. Go to https://open-meteo.com/en/docs
