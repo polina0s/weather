@@ -28,8 +28,8 @@ body {
     &-pin {
       // width: 60px;
       // height: 60px;
-      width: clamp(30px, 15vw, 60px);
-      height: clamp(30px, 15vh, 60px);
+      width: clamp(20px, 15vw, 60px);
+      height: clamp(20px, 15vh, 60px);
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-position: center;

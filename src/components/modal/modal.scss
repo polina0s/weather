@@ -16,19 +16,6 @@
     visibility: visible;
   }
 
-  // @include laptop {
-  //   width: 600px;
-  // }
-
-  // @include tablet {
-  //   width: 550px;
-  // }
-
-  // @include  mobile {
-  //   width: 100%;
-  //   max-width: 300px;
-  // }
-
   &-button {
     display: flex;
     border: none;
@@ -47,21 +34,17 @@
 
     &--country {
       margin: 0px 0px 0px 7px;
-      // width: 200px;
-      width: clamp(100px, 30vw, 200px);
+      width: 200px;
+      // width: clamp(100px, 30vw, 200px);
       text-align: left;
 
-      // @include laptop {
-      //   width: 180px;
-      // }
+      @include mobile {
+        width: 100px;
+      }
+    }
 
-      // @include tablet {
-      //   width: 170px;
-      // }
-
-      // @include mobile {
-      //   width: 130px;
-      // }
+    &--city {
+      text-align: left;
     }
   }
 }
