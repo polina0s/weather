@@ -1,6 +1,6 @@
-import { api } from "../../api/api";
-import { CurrentWeather } from "../currentWeather/currentWeather";
-import { WeekWeather } from "../weekWeather/weekWeather";
+import { api } from '../../api/api';
+import { CurrentWeather } from '../currentWeather/currentWeather';
+import { WeekWeather } from '../weekWeather/weekWeather';
 
 // БЭМ
 /**
@@ -11,15 +11,15 @@ import { WeekWeather } from "../weekWeather/weekWeather";
  */
 export class WeatherCont {
   constructor() {
-    this.weatherContCur = document.querySelector(".weather-cont__cur"); //weather-cont__cur
-    this.weatherContWeek = document.querySelector(".weather-cont__week"); //weather-cont__week
+    this.weatherContCur = document.querySelector('.weather-cont__cur'); //weather-cont__cur
+    this.weatherContWeek = document.querySelector('.weather-cont__week'); //weather-cont__week
   }
 
   convertTimeToDates(time) {
     let dates = [];
 
     for (let i = 0; i < time.length; i++) {
-      let date = time[i].substring(5, 10).replaceAll("-", ".");
+      let date = time[i].substring(5, 10).replaceAll('-', '.');
       dates.push(date);
     }
 
@@ -57,11 +57,11 @@ export class WeatherCont {
   }
 
   clearWeatherContCur() {
-    this.weatherContCur.innerHTML = "";
+    this.weatherContCur.innerHTML = '';
   }
 
   clearWeatherContWeek() {
-    this.weatherContWeek.innerHTML = "";
+    this.weatherContWeek.innerHTML = '';
   }
 
   appendCurrentWeather(element, callback) {

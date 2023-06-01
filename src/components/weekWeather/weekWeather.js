@@ -1,4 +1,4 @@
-import { NEXT_DAY } from "../../config/config";
+import { NEXT_DAY } from '../../config/config';
 
 export class WeekWeather {
   constructor(time, temp) {
@@ -6,8 +6,8 @@ export class WeekWeather {
   }
 
   createWeekWeatherElement(time, temp) {
-    this.element = document.createElement("div");
-    this.element.classList.add("week-weather");
+    this.element = document.createElement('div');
+    this.element.classList.add('week-weather');
 
     this.element.innerHTML = `
     <div class="week-weather__el">
@@ -45,7 +45,7 @@ export class WeekWeather {
 
   endTransition() {
     setTimeout(() => {
-      this.element.classList.add("week-weather--end");
+      this.element.classList.add('week-weather--end');
     }, 10);
   }
 }

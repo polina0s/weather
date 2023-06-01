@@ -1,8 +1,13 @@
-eslint, prettier, readme
+# Getting env VITE_WEATHER_URL
 
+1. Go to https://open-meteo.com/en/docs
+2. Go down the page to the API URL
+3. Copy the API URL before '/v1/'
+4. Write the copied URL in a VITE_WEATHER_URL variable
 
-# Получение енв
-Идешь туда регистрируешься получаешь енв создаешь .env 
+# Getting env VITE_GEO_URL
 
-VITE_GEO_URL - адрес апи геокодинга.
-VITE_GEO_URL - адрес апи геокодинга.
+1. Go to https://open-meteo.com/en/docs/geocoding-api
+2. Go down the page to the API URL
+3. Copy the API URL before '/v1/'
+4. Write the copied URL in a VITE_GEO_URL variable

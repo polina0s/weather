@@ -1,4 +1,4 @@
-import { weather, weatherImages } from "../../config/weathercodes";
+import { weather, weatherImages } from '../../config/weathercodes';
 
 export class CurrentWeather {
   constructor(data) {
@@ -10,8 +10,8 @@ export class CurrentWeather {
   }
 
   createCurrentWeatherElement({ weathercode, temperature, name }) {
-    this.element = document.createElement("div");
-    this.element.classList.add("cur-weather");
+    this.element = document.createElement('div');
+    this.element.classList.add('cur-weather');
 
     this.element.innerHTML = `
     <div class="cur-weather__name">${name}</div>
@@ -24,7 +24,7 @@ export class CurrentWeather {
 
   endTransition() {
     setTimeout(() => {
-      this.element.classList.add("cur-weather--end");
+      this.element.classList.add('cur-weather--end');
     }, 10);
   }
 }

@@ -1,11 +1,11 @@
-import { modal } from "../modal/modal";
-import { api } from "../../api/api";
-import { debounce } from "../../utils/debounce/debounce";
+import { modal } from '../modal/modal';
+import { api } from '../../api/api';
+import { debounce } from '../../utils/debounce/debounce';
 
 class Input {
   constructor() {
-    this.cityInput = document.querySelector(".weather_locationInput-input");
-    this.helper = document.querySelector(".modal");
+    this.cityInput = document.querySelector('.weather_locationInput-input');
+    this.helper = document.querySelector('.modal');
 
     this.modal = modal;
 
@@ -34,17 +34,17 @@ class Input {
 
   onChange() {
     const debouncedChange = debounce((e) => this.showHelper(e.target.value));
-    this.cityInput.addEventListener("input", debouncedChange);
+    this.cityInput.addEventListener('input', debouncedChange);
   }
 
   onFocusInput() {
-    this.cityInput.addEventListener("focus", (e) => {
+    this.cityInput.addEventListener('focus', (e) => {
       this.showHelper(e.target.value);
     });
   }
 
   clearInput() {
-    this.cityInput.value = "";
+    this.cityInput.value = '';
   }
 }
 
