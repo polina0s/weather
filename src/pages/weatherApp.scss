@@ -121,7 +121,7 @@ body {
   }
 
   &_week {
-    width: clamp(300px, 70vw, 850px);
+    width: clamp(300px, 70vw, 900px);
     margin: 0 auto;
     margin-bottom: 30px;
     display: flex;
@@ -146,7 +146,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 1 100px;
+    flex: 1 1 calc(16% - 5px);
+
+    @include tablet {
+      flex: 1 1 calc(33% - 5px);
+    }
     // margin: 10px;
   }
 
