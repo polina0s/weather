@@ -1,16 +1,34 @@
-import { api } from "../api/api";
+import { api } from "../../api/api";
 import { CurrentWeather } from "../currentWeather/currentWeather";
 import { WeekWeather } from "../weekWeather/weekWeather";
 
+// БЭМ
+/**
+ * БЛОК__елемент--модификатор
+ *
+ * БЛОК(weather-container)__element(current-forecast)--модификатор(hidden)
+ * weather-container__current-forecast weather-container__current-forecast--hidden
+ */
 export class WeatherCont {
   constructor() {
-    this.weatherContCur = document.querySelector(".weather_cont--cur");
-    this.weatherContWeek = document.querySelector(".weather_cont--week");
-    this.api = api;
+    this.weatherContCur = document.querySelector(".weather_cont--cur"); //weather-cont__cur
+    this.weatherContWeek = document.querySelector(".weather_cont--week"); //weather-cont__week
+  }
+
+  convertTimeToDates(time) {
+    let dates = [];
+
+    for (let i = 0; i < time.length; i++) {
+      let date = time[i].substring(5, 10).replaceAll("-", ".");
+      dates.push(date);
+    }
+
+    return dates;
   }
 
   fillCurrentWeatherElement({ latitude, longitude, name }) {
-    this.api.getCurrentWeather(latitude, longitude).then((weather) => {
+    api.getCurrentWeather(latitude, longitude).then((weather) => {
+      // const
       let data = {
         weathercode: weather.weathercode,
         temperature: weather.temperature,
@@ -19,37 +37,22 @@ export class WeatherCont {
 
       this.currentWeather = new CurrentWeather(data);
 
-      this.appendCurrentWeather(this.currentWeather.element);
+      this.appendCurrentWeather(
+        this.currentWeather.element,
+        this.currentWeather.endTransition()
+      );
     });
 
-    this.api.getForecast(latitude, longitude).then((forecast) => {
-      let temp = forecast.temperature_2m;
-      let timeArr = forecast.time;
-      let dates = [];
+    api.getForecast(latitude, longitude).then((forecast) => {
+      const timeArr = forecast.time;
+      const dates = this.convertTimeToDates(timeArr);
 
-      for (let i = 0; i < timeArr.length; i++) {
-        let date = timeArr[i].substring(5, 10).replaceAll("-", ".");
-        dates.push(date);
-      }
-      // time = dates,
-      // temperature = temp,
+      this.weekWeather = new WeekWeather(dates, forecast.temperature_2m);
 
-      this.weekWeather = new WeekWeather(dates, temp);
-
-      console.log(dates, temp);
-      console.log(dates[167]);
-
-      this.appendWeekeather(this.weekWeather.element);
-
-      // let timeArr = forecast.time;
-      // let dates = [];
-
-      // for (let i = 0; i < timeArr.length; i++) {
-      //   let date = timeArr[i].substring(5, 10).replaceAll("-", ".");
-      //   dates.push(date);
-      // }
-
-      // console.log(dates);
+      this.appendWeekWeather(
+        this.weekWeather.element,
+        this.weekWeather.endTransition()
+      );
     });
   }
 
@@ -61,13 +64,11 @@ export class WeatherCont {
     this.weatherContWeek.innerHTML = "";
   }
 
-  appendCurrentWeather(element) {
+  appendCurrentWeather(element, callback) {
     this.weatherContCur.append(element);
-    this.currentWeather.endTransition();
   }
 
-  appendWeekeather(element) {
+  appendWeekWeather(element, callback) {
     this.weatherContWeek.appendChild(element);
-    this.weekWeather.endTransition();
   }
 }

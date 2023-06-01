@@ -1,0 +1,25 @@
+include ../../components/input/input
+include ../../components/modal/modal
+
+div.weather
+  div.weather_locationInput
+    div.weather_locationInput-pin
+    +input(placeholder='Enter your location...' class='weather_locationInput-input')
+  div.weather_locationModal
+    +modal
+  div.weather_cont--cur 
+  div.weather_cont--week
+
+  //- div.weather-cont__cur
+  //-   div.cur-weather__name ${name}
+  //-   div.cur-weather__img-cont
+  //-     img.cur-weather__img src="/src/pictures/${weatherImages[weathercode]}.png" alt="weather"
+  //-   div.cur-weather__temp ${temperature}°C
+  //-   div.cur-weather__descrip ${weather[weathercode]}
+
+
+
+  //- div.weather-cont__week
+  //-   div.week-weather__el
+  //-     div.week-weather__day ${time[NEXT_DAY]} <br> ${temp[NEXT_DAY]}°C 
+

@@ -1,4 +1,4 @@
-import { weather, weatherImages } from "../weathercodes/weathercodes";
+import { weather, weatherImages } from "../../config/weathercodes";
 
 export class CurrentWeather {
   constructor(data) {

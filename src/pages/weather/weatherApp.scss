@@ -53,6 +53,10 @@ body {
   }
 }
 
+.cur-weather {
+  
+}
+
 .weather {
 
   &_cur {
@@ -63,9 +67,9 @@ body {
   opacity: 0;
   transition: 0.5s opacity;
   
-  &--end {
-    opacity: 1;
-  }
+    &--end {
+      opacity: 1;
+    }
   }
 
   &_cur--name {
@@ -151,7 +155,6 @@ body {
     @include tablet {
       flex: 1 1 calc(33% - 5px);
     }
-    // margin: 10px;
   }
 
     &_week--day {

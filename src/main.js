@@ -1,4 +1,7 @@
 import "./styles/main.scss";
-import { Input } from "./components/input/input";
+import { WeatherPage } from "./pages/weather/weatherApp";
 
-const input = new Input();
+document.addEventListener("DOMContentLoaded", () => {
+  // new Input();
+  new WeatherPage();
+});

@@ -29,6 +29,7 @@ export let weather = {
   99: "thunderstorm with heavy hail",
 };
 
+// TODO: const
 export let weatherImages = {
   0: 0,
   1: 1,
