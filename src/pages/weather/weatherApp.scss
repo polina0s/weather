@@ -20,7 +20,7 @@ body {
     padding: 30px 10px 30px 10px;
   }
 
-  &_locationInput {
+  &__location {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
@@ -40,7 +40,7 @@ body {
     }
   }
 
-  &_locationModal {
+  &__location-modal {
     display: flex;
     justify-content: center;
     margin-left: 75px;

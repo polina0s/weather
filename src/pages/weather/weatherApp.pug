@@ -2,10 +2,11 @@ include ../../components/input/input
 include ../../components/modal/modal
 
 div.weather
-  div.weather_locationInput
-    div.weather_locationInput-pin
-    +input(placeholder='Enter your location...' class='weather_locationInput-input')
-  div.weather_locationModal
+  div.weather__location
+    div.weather__location-pin
+    +input(placeholder='Enter your location...' class='weather__location-input')
+  div.weather__location-modal
     +modal
-  div.weather-cont__cur 
-  div.weather-cont__week
+  div.weather-forecast__cur 
+  div.weather-forecast__week
+

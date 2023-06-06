@@ -1,18 +1,10 @@
 import { api } from '../../api/api';
 import { CurrentWeather } from '../currentWeather/currentWeather';
 import { WeekWeather } from '../weekWeather/weekWeather';
-
-// БЭМ
-/**
- * БЛОК__елемент--модификатор
- *
- * БЛОК(weather-container)__element(current-forecast)--модификатор(hidden)
- * weather-container__current-forecast weather-container__current-forecast--hidden
- */
 export class WeatherCont {
   constructor() {
-    this.weatherContCur = document.querySelector('.weather-cont__cur'); //weather-cont__cur
-    this.weatherContWeek = document.querySelector('.weather-cont__week'); //weather-cont__week
+    this.weatherContCur = document.querySelector('.weather-forecast__cur');
+    this.weatherContWeek = document.querySelector('.weather-forecast__week');
   }
 
   convertTimeToDates(time) {

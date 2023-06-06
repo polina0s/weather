@@ -4,7 +4,7 @@ import { debounce } from '../../utils/debounce/debounce';
 
 class Input {
   constructor() {
-    this.cityInput = document.querySelector('.weather_locationInput-input');
+    this.cityInput = document.querySelector('.weather__location-input');
     this.helper = document.querySelector('.modal');
 
     this.modal = modal;
