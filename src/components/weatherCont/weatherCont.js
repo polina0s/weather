@@ -19,21 +19,29 @@ export class WeatherCont {
   }
 
   fillCurrentWeatherElement({ latitude, longitude, name }) {
-    api.getCurrentWeather(latitude, longitude).then((weather) => {
-      // const
-      let data = {
-        weathercode: weather.weathercode,
-        temperature: weather.temperature,
-        name: name,
-      };
+    // this.zalupa.startLoading();
+    this.currentWeather = new CurrentWeather();
+    this.currentWeather.startLoading();
 
-      this.currentWeather = new CurrentWeather(data);
+    api
+      .getCurrentWeather(latitude, longitude)
+      .then((weather) => {
+        const data = {
+          weathercode: weather.weathercode,
+          temperature: weather.temperature,
+          name: name,
+        };
 
-      this.appendCurrentWeather(
-        this.currentWeather.element,
-        this.currentWeather.endTransition()
-      );
-    });
+        this.currentWeather.createCurrentWeatherElement(data);
+
+        this.appendCurrentWeather(
+          this.currentWeather.element,
+          this.currentWeather.endTransition()
+        );
+      })
+      .finally(() => {
+        this.currentWeather.endLoading();
+      });
 
     api.getForecast(latitude, longitude).then((forecast) => {
       const timeArr = forecast.time;
@@ -58,9 +66,11 @@ export class WeatherCont {
 
   appendCurrentWeather(element, callback) {
     this.weatherContCur.append(element);
+    callback?.();
   }
 
   appendWeekWeather(element, callback) {
     this.weatherContWeek.appendChild(element);
+    callback?.();
   }
 }

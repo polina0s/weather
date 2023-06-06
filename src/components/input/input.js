@@ -1,6 +1,6 @@
 import { modal } from '../modal/modal';
 import { api } from '../../api/api';
-import { debounce } from '../../utils/debounce/debounce';
+import { debounce } from '../../utils/debounce';
 
 class Input {
   constructor() {
@@ -14,7 +14,7 @@ class Input {
   }
 
   async fillHelper(value) {
-    let data = await api.getCities(value);
+    const data = await api.getCities(value);
 
     if (data !== undefined) {
       this.modal.showModal(data);

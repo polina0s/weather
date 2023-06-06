@@ -1,14 +1,6 @@
 import { weather, weatherImages } from '../../config/weathercodes';
 
 export class CurrentWeather {
-  constructor(data) {
-    this.createCurrentWeatherElement({
-      weathercode: data.weathercode,
-      temperature: data.temperature,
-      name: data.name,
-    });
-  }
-
   createCurrentWeatherElement({ weathercode, temperature, name }) {
     this.element = document.createElement('div');
     this.element.classList.add('cur-weather');
@@ -26,5 +18,18 @@ export class CurrentWeather {
     setTimeout(() => {
       this.element.classList.add('cur-weather--end');
     }, 10);
+  }
+
+  startLoading() {
+    console.log('load...');
+    const d = document.querySelector('.preload');
+    console.log(d);
+    d.classList.add('preload--end');
+  }
+
+  endLoading() {
+    console.log('loaded!');
+    const d = document.querySelector('.preload');
+    d.classList.remove('preload--end');
   }
 }
