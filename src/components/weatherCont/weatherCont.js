@@ -1,11 +1,12 @@
 import { api } from '../../api/api';
 import { CurrentWeather } from '../currentWeather/currentWeather';
 import { WeekWeather } from '../weekWeather/weekWeather';
-import { loader } from '../loader/loader';
+import { Loader } from '../loader/loader';
 export class WeatherCont {
   constructor() {
     this.weatherContCur = document.querySelector('.weather-forecast__cur');
     this.weatherContWeek = document.querySelector('.weather-forecast__week');
+    this.loader = new Loader();
   }
 
   convertTimeToDates(time) {
@@ -20,10 +21,8 @@ export class WeatherCont {
   }
 
   fillCurrentWeatherElement({ latitude, longitude, name }) {
-    // this.zalupa.startLoading();
     this.currentWeather = new CurrentWeather();
-    // this.currentWeather.startLoading();
-    loader.startLoading(this.weatherContCur);
+    this.loader.startLoading(this.weatherContCur);
 
     api
       .getCurrentWeather(latitude, longitude)
@@ -42,8 +41,7 @@ export class WeatherCont {
         );
       })
       .finally(() => {
-        loader.endLoading();
-        // this.currentWeather.endLoading();
+        this.loader.endLoading();
       });
 
     api.getForecast(latitude, longitude).then((forecast) => {

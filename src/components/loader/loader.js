@@ -1,4 +1,4 @@
-class Loader {
+export class Loader {
   constructor() {
     this.createLoader();
   }
@@ -18,6 +18,3 @@ class Loader {
     this.element.remove();
   }
 }
-
-const loader = new Loader();
-export { loader };

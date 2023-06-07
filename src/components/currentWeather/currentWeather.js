@@ -19,19 +19,4 @@ export class CurrentWeather {
       this.element.classList.add('cur-weather--end');
     }, 10);
   }
-
-  // startLoading() {
-  //   console.log('load...');
-  //   const d = document.querySelector('.preload-cont');
-  //   console.log(d);
-  //   d.innerHTML = `<img src="/src/pictures/preload.gif", alt="34" class="preload-cont__img" />`;
-  //   d.classList.add('preload-cont--end');
-  // }
-
-  // endLoading() {
-  //   console.log('loaded!');
-  //   const d = document.querySelector('.preload-cont');
-  //   d.classList.remove('preload-cont--end');
-  //   // d.innerHTML = '';
-  // }
 }

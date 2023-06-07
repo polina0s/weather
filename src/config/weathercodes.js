@@ -1,4 +1,4 @@
-export let weather = {
+export const weather = {
   0: 'clear sky',
   1: 'mainly clear',
   2: 'partly cloudy',
@@ -30,7 +30,7 @@ export let weather = {
 };
 
 // TODO: const
-export let weatherImages = {
+export const weatherImages = {
   0: 0,
   1: 1,
   2: 1,
