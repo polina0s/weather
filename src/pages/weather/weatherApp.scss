@@ -155,12 +155,3 @@ body {
     line-height: 30px;
   }
 }
-
-.preload {
-  opacity: 0;
-  transition: 0.2s;
-
-  &--end {
-    opacity: 1;
-  }
-}

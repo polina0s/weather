@@ -20,16 +20,18 @@ export class CurrentWeather {
     }, 10);
   }
 
-  startLoading() {
-    console.log('load...');
-    const d = document.querySelector('.preload');
-    console.log(d);
-    d.classList.add('preload--end');
-  }
+  // startLoading() {
+  //   console.log('load...');
+  //   const d = document.querySelector('.preload-cont');
+  //   console.log(d);
+  //   d.innerHTML = `<img src="/src/pictures/preload.gif", alt="34" class="preload-cont__img" />`;
+  //   d.classList.add('preload-cont--end');
+  // }
 
-  endLoading() {
-    console.log('loaded!');
-    const d = document.querySelector('.preload');
-    d.classList.remove('preload--end');
-  }
+  // endLoading() {
+  //   console.log('loaded!');
+  //   const d = document.querySelector('.preload-cont');
+  //   d.classList.remove('preload-cont--end');
+  //   // d.innerHTML = '';
+  // }
 }
