@@ -1,5 +1,5 @@
 import './styles/main.scss';
-import { WeatherPage } from './pages/weather/weatherApp';
+import { WeatherPage } from './pages/weather/weather';
 
 document.addEventListener('DOMContentLoaded', () => {
   // new Input();
