@@ -1,24 +1,24 @@
-import { CityButton } from "../cityButton/cityButton";
-import { WeatherCont } from "../weatherCont/weatherCont";
+import { CityButton } from '../cityButton/cityButton';
+import { WeatherCont } from '../weatherCont/weatherCont';
 
 class Modal {
   constructor() {
-    this.modalWind = document.querySelector(".modal");
+    this.modalWind = document.querySelector('.modal');
 
     this.weatherCont = new WeatherCont();
-    this.currWeather = document.querySelector(".weather_cur");
+    this.currWeather = document.querySelector('.weather_cur');
   }
 
   addActiveClass() {
-    this.modalWind.classList.add("modal--active");
+    this.modalWind.classList.add('modal--active');
   }
 
   removeActiveClass() {
-    this.modalWind.classList.remove("modal--active");
+    this.modalWind.classList.remove('modal--active');
   }
 
   clearModal() {
-    this.modalWind.innerHTML = "";
+    this.modalWind.innerHTML = '';
   }
 
   appendCityButton(element) {
@@ -33,6 +33,10 @@ class Modal {
       latitude: data.latitude,
       longitude: data.longitude,
       name: data.name,
+    });
+    this.weatherCont.fillWeekWeatherElement({
+      latitude: data.latitude,
+      longitude: data.longitude,
     });
   }
 

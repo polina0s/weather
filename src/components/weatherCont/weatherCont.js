@@ -46,17 +46,28 @@ export class WeatherCont {
   }
 
   fillWeekWeatherElement({ latitude, longitude }) {
-    api.getForecast(latitude, longitude).then((forecast) => {
-      const timeArr = forecast.time;
-      const dates = this.convertTimeToDates(timeArr);
+    this.weekWeather = new WeekWeather();
+    this.loader.startLoading(this.weatherContWeek);
 
-      this.weekWeather = new WeekWeather(dates, forecast.temperature_2m);
+    api
+      .getForecast(latitude, longitude)
+      .then((forecast) => {
+        const timeArr = forecast.time;
+        const dates = this.convertTimeToDates(timeArr);
 
-      this.appendWeekWeather(
-        this.weekWeather.element,
-        this.weekWeather.endTransition()
-      );
-    });
+        this.weekWeather.createWeekWeatherElement(
+          dates,
+          forecast.temperature_2m
+        );
+
+        this.appendWeekWeather(
+          this.weekWeather.element,
+          this.weekWeather.endTransition()
+        );
+      })
+      .finally(() => {
+        this.loader.endLoading();
+      });
   }
 
   clearWeatherContCur() {
