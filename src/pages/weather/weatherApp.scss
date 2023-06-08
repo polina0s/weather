@@ -153,5 +153,9 @@ body {
     margin: 0px;
     font-size: clamp(25px, 5vw, 30px);
     line-height: 30px;
+
+    &--temp {
+      color: $pink;
+    }
   }
 }

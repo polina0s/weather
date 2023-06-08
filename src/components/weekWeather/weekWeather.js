@@ -7,34 +7,46 @@ export class WeekWeather {
 
     this.element.innerHTML = `
     <div class="week-weather__el">
-      <div class="week-weather__day"> ${time[NEXT_DAY]} <br> ${
+      <div class="week-weather__day"> ${
+        time[NEXT_DAY]
+      } <br> <span class="week-weather__day--temp"> ${
       temp[NEXT_DAY]
-    }°C </div>
+    }°C </span ></div>
     </div>  
     <div class="week-weather__el">
-      <div class="week-weather__day"> ${time[NEXT_DAY * 2]} <br> ${
+      <div class="week-weather__day"> ${
+        time[NEXT_DAY * 2]
+      } <br> <span class="week-weather__day--temp">${
       temp[NEXT_DAY * 2]
-    }°C </div>
+    }°C </span> </div>
     </div>  
     <div class="week-weather__el">
-      <div class="week-weather__day"> ${time[NEXT_DAY * 3]} <br> ${
+      <div class="week-weather__day"> ${
+        time[NEXT_DAY * 3]
+      } <br> <span class="week-weather__day--temp">${
       temp[NEXT_DAY * 3]
-    }°C </div>
+    }°C </span> </div>
     </div>  
     <div class="week-weather__el">
-      <div class="week-weather__day"> ${time[NEXT_DAY * 4]} <br> ${
+      <div class="week-weather__day"> ${
+        time[NEXT_DAY * 4]
+      } <br> <span class="week-weather__day--temp">${
       temp[NEXT_DAY * 4]
-    }°C </div>
+    }°C </span> </div>
     </div>  
     <div class="week-weather__el">
-      <div class="week-weather__day"> ${time[NEXT_DAY * 5]} <br> ${
+      <div class="week-weather__day"> ${
+        time[NEXT_DAY * 5]
+      } <br> <span class="week-weather__day--temp"> ${
       temp[NEXT_DAY * 5]
-    }°C </div>
+    }°C </span> </div>
     </div>  
     <div class="week-weather__el">
-      <div class="week-weather__day"> ${time[NEXT_DAY * 6]} <br> ${
+      <div class="week-weather__day"> ${
+        time[NEXT_DAY * 6]
+      } <br> <span class="week-weather__day--temp"> ${
       temp[NEXT_DAY * 6]
-    }°C </div>
+    }°C </span> </div>
     </div>            
     `;
   }
