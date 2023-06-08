@@ -1,10 +1,6 @@
 import { NEXT_DAY } from '../../config/config';
 
 export class WeekWeather {
-  constructor(time, temp) {
-    this.createWeekWeatherElement(time, temp);
-  }
-
   createWeekWeatherElement(time, temp) {
     this.element = document.createElement('div');
     this.element.classList.add('week-weather');

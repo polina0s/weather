@@ -43,7 +43,9 @@ export class WeatherCont {
       .finally(() => {
         this.loader.endLoading();
       });
+  }
 
+  fillWeekWeatherElement({ latitude, longitude }) {
     api.getForecast(latitude, longitude).then((forecast) => {
       const timeArr = forecast.time;
       const dates = this.convertTimeToDates(timeArr);
