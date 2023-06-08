@@ -2,6 +2,7 @@ import { api } from '../../api/api';
 import { CurrentWeather } from '../currentWeather/currentWeather';
 import { WeekWeather } from '../weekWeather/weekWeather';
 import { Loader } from '../loader/loader';
+
 export class WeatherCont {
   constructor() {
     this.weatherContCur = document.querySelector('.weather-forecast__cur');
